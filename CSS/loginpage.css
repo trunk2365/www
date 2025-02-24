@@ -1,0 +1,141 @@
+main {
+    margin-inline: 20%;
+}
+
+.form-group-login {
+    display: flex;
+    flex-direction: column;
+    background-color: #F0F0F0;
+    width: 500px;
+    margin: 5vh;
+    padding: 5vh;
+    border-radius: 1%;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 40vh;
+}
+
+.group-1 {
+    display: flex;
+}
+
+.info-field {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    
+}
+
+.name-field {
+    width: 500px;
+}
+
+.field {
+    width: 90%;
+    margin: 0.8vh;   
+}
+
+.text-sub {
+    margin-block: 2vh;
+}
+
+.group-2 {
+    display: flex;
+    justify-content: right;
+}
+
+.group-3 {
+    display: flex;
+    justify-content: right;
+    margin-top: 5vh;
+}
+
+.sub-button {
+    width: 150px;
+    height: 40px;
+    display: inline-block;
+    padding: 10px 20px;
+    border: none; 
+    background-color: #e0e0e0; 
+    color: #333; 
+    text-align: center; 
+    text-decoration: none; 
+    font-size: 16px; 
+    font-family: sans-serif; 
+    cursor: pointer; 
+    border-radius: 5px; 
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); 
+    }
+   
+
+.password-forget {
+    color: rgb(54, 54, 238);
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+
+    main {
+        margin-inline: 0%;
+    }
+    
+    .form-group-login {
+        display: flex;
+        flex-direction: column;
+        background-color: #F0F0F0;
+        width: 280px;
+        padding: 5vh;
+        border-radius: 1%;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+        margin: 2vh;
+        margin-bottom: 30vh;
+        
+    }
+    
+    .group-1 {
+        display: flex;
+    }
+    
+    .info-field {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        
+    }
+    
+    .name-field {
+        width: 350px;
+    }
+    
+    .field {
+        width: 100%;
+        margin: 0.8vh;   
+    }
+    
+    .text-sub {
+        margin-block: 2vh;
+    }
+    
+    .group-2 {
+        display: flex;
+        justify-content: right;
+    }
+    
+    .group-3 {
+        display: flex;
+        justify-content: right;
+        margin-top: 5vh;
+    }
+    
+    .sub-button {
+        width: 150px;
+        height: 40px;
+    }
+    
+    .password-forget {
+        color: rgb(54, 54, 238);
+        text-decoration: underline;
+    }
+
+}

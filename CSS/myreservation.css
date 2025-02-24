@@ -1,0 +1,120 @@
+main {
+    margin-inline: 20%;
+}
+
+.route-container-recent {
+    display: flex;
+    flex-wrap: wrap;
+    background-color:#87CEEB;
+    width: 600px;
+    height: 130px;
+    margin: 3vh;
+    padding: 2vh;
+    border-radius: 1%;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.route-container {
+    display: flex;
+    flex-wrap: wrap;
+    background-color:#f0f0f0;
+    width: 600px;
+    height: 130px;
+    margin: 3vh;
+    padding: 2vh;
+    border-radius: 1%;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+    .traveltime-container {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        align-items: center;
+        margin-inline: 2vh;
+        width: 300px;
+        height: 30px;
+    }
+
+    .price {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 5vh;
+        height: 30px;
+        margin-left: 200px;
+        font-size:x-large;
+    }
+
+    .from-city {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        width: 300px;
+        height: 30px;
+        margin-inline: 2vh;
+    }
+
+        .route-image {
+            margin-inline: 2vh;
+        }
+
+    .profile-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin: 2vh;
+        padding: 1vh;
+        width: 60%;
+        border-top: 1px solid rgb(131, 131, 131);
+    }
+
+        .profile-picture {
+            margin-right: 2vh;
+        }
+
+        @media (max-width:768px) {
+
+            main {
+                margin-inline: 5%;
+            }
+        
+            .route-container-recent {
+                display: flex;
+                flex-wrap: wrap;
+                background-color:#87CEEB;
+                width: 300px;
+                height: 150px;
+                margin: 3vh;
+                padding: 2vh;
+                border-radius: 1%;
+                box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+            }
+            
+            .route-container {
+                display: flex;
+                flex-wrap: wrap;
+                background-color:#f0f0f0;
+                width: 300px;
+                height: 150px;
+                margin: 3vh;
+                padding: 2vh;
+                border-radius: 1%;
+                box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+            }
+        
+            .from-city {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                width: 300px;
+                height: 30px;
+                margin-inline: 2vh;
+            }
+        
+            .price {
+                display: none;
+            }
+        }
