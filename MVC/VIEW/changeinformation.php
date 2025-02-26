@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/CSS/style.css">
-    <link rel="stylesheet" href="/CSS/settingmenu.css">
-    <title>Paramètre</title>
+    <link rel="stylesheet" href="/CSS/changeinformation.css">
+    <title>Inscription</title>
 </head>
 <body>
 
@@ -32,6 +32,7 @@
             <ul>
                 <li><button><a href="/index.php">Accueil</a></button></li>
                 <li><button><a href="/MVC/VIEW/publication-list.php">Trajets</a></button></li>
+                <li><button><a href="/MVC/VIEW/subscribe.php">Inscription</a></button></li>
             </ul>
         </nav>
 
@@ -39,11 +40,32 @@
 
 <main>
 
-    <div class="menu-account">
-        <div class="back-button"><a class="menu-button-style2" href="/MVC/VIEW/myaccount.php">Précédent</a></div>
-        <div class="menu-button"><a href="/MVC/VIEW/changeinformation.php" class="menu-button-style2">Changer vos informations</a></div>
-        <div class="menu-button"><a href="/MVC/VIEW/changemail.php" class="menu-button-style2">Changer mot de passe/Adresse mail</a></div>
+    <div class="form-group-subscribe">
+        <form>
+            <div class="group-1">
+                <div class="name-field">
+                    <p class="text-sub">Nom : </p>
+                    <p class="text-sub">Prénom : </p>
+                </div>
+                <div class="info-field">
+                    <input type="text" class="field">
+                    <input type="text" class="field">
+                </div>
+            </div>
+            <div class="group-2">
+                <div class="upload-picture">
+                    <img src="/Ressources/upload.png" class="img-upload">
+                Insérer une photo
+                </div>
+                <input type="text" class="description">
+            </div>
+            <button class="sub-button">Appliquer vos modifications</button>
+        </form>
+        
     </div>
+
+    
+
 
 </main>
 
@@ -59,7 +81,8 @@
         <img src="/Ressources/twitter.png" height="30vh"><label class="media">Twitter</label>
     </div>
 </div>
-</footer>
-<script src="/JS/burgermenu.js"></script>
+
+</footer> 
+<script src="/JS/burgermenu.js"></script>   
 </body>
 </html>

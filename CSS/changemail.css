@@ -11,7 +11,7 @@ main {
     padding: 5vh;
     border-radius: 1%;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
-    margin-bottom: 15vh;
+    margin-bottom: 35vh;
 }
 
 .group-1 {
@@ -91,6 +91,7 @@ main {
 .sub-button {
     width: 150px;
     height: 40px;
+    margin-top: 5%;
     display: inline-block;
     padding: 10px 20px;
     border: none; 
@@ -126,7 +127,7 @@ main {
         padding: 3.5vh;
         border-radius: 1%;
         box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
-        margin-bottom: 15vh;
+        margin-bottom: 30vh;
     }
     
     .group-1 {
@@ -147,11 +148,14 @@ main {
     
         .field {
             width: 100%;
-            margin: 0.8vh;   
+            margin: 0.8vh;
+            padding: 3px; 
         }
     
         .text-sub {
             margin-block: 2vh;
+            font-size: 12px;
+            padding: 5px;
         }
     
     
@@ -204,9 +208,10 @@ main {
     
     .sub-button {
         width: 150px;
-        height: 40px;
+        height: 50px;
         display: inline-block;
         padding: 10px 20px;
+        margin-left: 0px;
         border: none; 
         background-color: #e0e0e0; 
         color: #333; 
