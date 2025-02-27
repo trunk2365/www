@@ -1,3 +1,23 @@
+<?php
+require_once '/laragon/www/MVC/MODEL/user.model.php';
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $firstname = $_POST['FIRSTNAME'];
+    $email = $_POST['EMAIL'];
+    $password = $_POST['PASSWORD'];
+
+    $result = createUser($firstname, $email, $password);
+
+    if ($result) {
+        echo "Inscription réussie !";
+    } else {
+        echo "Erreur lors de l'inscription.";
+    }
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -41,7 +61,7 @@
 <main>
 
     <div class="form-group-subscribe">
-        <form>
+        <form method="post">
             <div class="group-1">
                 <div class="name-field">
                     <p class="text-sub">Nom d'utilisateur : </p>
@@ -51,11 +71,11 @@
                     <p class="text-sub">Mot de passe : </p>
                 </div>
                 <div class="info-field">
+                    <input type="text" class="field" name="FIRSTNAME" id="firstname" required>
                     <input type="text" class="field">
                     <input type="text" class="field">
-                    <input type="text" class="field">
-                    <input type="text" class="field">
-                    <input type="text" class="field">
+                    <input type="email" class="field" name="EMAIL" id="email" required>
+                    <input type="password" class="field" name="PASSWORD" id="password" required>
                 </div>
             </div>
             <div class="group-2">
@@ -68,7 +88,9 @@
             <div class="group-3">
                 <p class="text-terms">Accepter les <a href="#" class="term-color">termes du contrat d'utilisation</a></p><input type="checkbox">
             </div>
+            <form method="post" action="subscribe.php">
             <button class="sub-button">S'inscrire</button>
+            </form>
         </form>
         
     </div>

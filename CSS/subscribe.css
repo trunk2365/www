@@ -113,7 +113,7 @@ main {
 @media (max-width: 768px) {
 
     main {
-        margin-inline: 1%;
+        margin-inline: 0%;
     }
     
 
@@ -142,11 +142,11 @@ main {
         }
     
         .name-field {
-            width: 250px;
+            width: 270px;
         }
     
         .field {
-            width: 100%;
+            width: 90%;
             margin: 0.8vh;   
         }
     

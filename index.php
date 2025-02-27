@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/CSS/style.css">
+    <link rel="stylesheet" href="/CSS/style2.css">
+
     <title>Accueil</title>
 </head>
 <body>
@@ -76,19 +78,19 @@
     <div class="route-list">
         <div class="form-group-route">
            <p class="text-route">Trajets > Trajets
-           <br><br><br>Trajets depuis :<br>
+           <br>Trajets depuis :<br>
            <br><br><span>Nom de la ville numéro 1 : </span><span>prix</span>
-           <br><br><span>Nom de la ville numéro 1 : </span><span>prix</span>
-           <br><br><span>Nom de la ville numéro 1 : </span><span>prix</span></p>
+           <br><span>Nom de la ville numéro 1 : </span><span>prix</span>
+           <br><span>Nom de la ville numéro 1 : </span><span>prix</span></p>
            <img class="img-city" src="https://www.la-poze-travel.com/wp-content/uploads/2021/03/ancien-hotel-de-ville-meximieux-ain-min.jpg">
         </div>
 
         <div class="form-group-route">
             <p class="text-route">Trajets > Trajets
-            <br><br>Trajets depuis :<br>
+            <br>Trajets depuis :<br>
             <br><br><span>Nom de la ville numéro 1 : </span><span>prix</span>
-            <br><br><span>Nom de la ville numéro 1 : </span><span>prix</span>
-            <br><br><span>Nom de la ville numéro 1 : </span><span>prix</span></p>
+            <br><span>Nom de la ville numéro 1 : </span><span>prix</span>
+            <br><span>Nom de la ville numéro 1 : </span><span>prix</span></p>
             <img class="img-city" src="https://upload.wikimedia.org/wikipedia/commons/f/f8/Amsterdam_Westerkerk_Blick_vom_Turm_auf_die_Prinsengracht_2.jpg">
         </div>
     </div>
