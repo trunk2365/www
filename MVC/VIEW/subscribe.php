@@ -2,19 +2,20 @@
 require_once '/laragon/www/MVC/MODEL/user.model.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $firstname = $_POST['FIRSTNAME'];
+    $pseudo = $_POST['PSEUDO_USER'];
+    $prenom = $_POST['FIRSTNAME'];
+    $nom = $_POST['LASTNAME'];
     $email = $_POST['EMAIL'];
     $password = $_POST['PASSWORD'];
 
-    $result = createUser($firstname, $email, $password);
+    $result = createUser($pseudo, $prenom, $nom, $email, $password);
 
     if ($result) {
-        echo "Inscription réussie !";
+        echo "<p class='reussite'>Inscription réussie !</p>";
     } else {
         echo "Erreur lors de l'inscription.";
     }
 }
-
 ?>
 
 
@@ -59,7 +60,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </header>
 
 <main>
-
     <div class="form-group-subscribe">
         <form method="post">
             <div class="group-1">
@@ -71,9 +71,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <p class="text-sub">Mot de passe : </p>
                 </div>
                 <div class="info-field">
+                    <input type="text" class="field" name="PSEUDO_USER" id="pseudo_user" required>
+                    <input type="text" class="field" name="LASTNAME" id="lastname" required>
                     <input type="text" class="field" name="FIRSTNAME" id="firstname" required>
-                    <input type="text" class="field">
-                    <input type="text" class="field">
                     <input type="email" class="field" name="EMAIL" id="email" required>
                     <input type="password" class="field" name="PASSWORD" id="password" required>
                 </div>

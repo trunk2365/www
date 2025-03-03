@@ -6,7 +6,7 @@ function getConnexion() {
     try {
         $dsn = "mysql:host=localhost;dbname=zigzagcar;charset=utf8mb4";
         $user = "root";
-        $pass = "Vegetawesome2365";
+        $pass = "testostas123";
         $pdo = new PDO($dsn, $user, $pass);
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         return $pdo;
@@ -46,12 +46,14 @@ function getUserById($id) {
 }
 
 // Créer un nouvel utilisateur
-function createUser($nom, $email, $password) {
+function createUser($pseudo, $prenom, $nom, $email, $password) {
     $pdo = getConnexion();
-    $sql = "INSERT INTO klftcclft_users (FIRSTNAME, EMAIL, PASSWORD) VALUES (:FIRSTNAME, :EMAIL, :PASSWORD)";
+    $sql = "INSERT INTO klftcclft_users (PSEUDO_USER, FIRSTNAME, LASTNAME, EMAIL, PASSWORD) VALUES (:PSEUDO_USER, :FIRSTNAME, :LASTNAME, :EMAIL, :PASSWORD)";
     try {
         $stmt = $pdo->prepare($sql);
-        $stmt->bindParam(':FIRSTNAME', $nom, PDO::PARAM_STR);
+        $stmt->bindParam(':PSEUDO_USER', $pseudo, PDO::PARAM_STR);
+        $stmt->bindParam(':FIRSTNAME', $prenom, PDO::PARAM_STR);
+        $stmt->bindParam(':LASTNAME', $nom, PDO::PARAM_STR);
         $stmt->bindParam(':EMAIL', $email, PDO::PARAM_STR);
         $stmt->bindParam(':PASSWORD', $password, PDO::PARAM_STR);
         $stmt->execute();

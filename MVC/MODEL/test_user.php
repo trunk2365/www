@@ -9,7 +9,7 @@ $email = 'test.user@example.com';
 $password = 'motdepasse123';
 
 // Création de l'utilisateur
-$lastInsertId = createUser($nom, $email, $password);
+$lastInsertId = createUser($pseudo, $prenom, $nom, $email, $password);
 
 if ($lastInsertId) {
     echo "Utilisateur créé avec succès.\n";

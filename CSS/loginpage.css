@@ -84,7 +84,7 @@ main {
         flex-direction: column;
         background-color: #F0F0F0;
         width: 280px;
-        padding: 5vh;
+        padding: 3vh;
         border-radius: 1%;
         box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
         margin: 2vh;
@@ -94,6 +94,7 @@ main {
     
     .group-1 {
         display: flex;
+        
     }
     
     .info-field {

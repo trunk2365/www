@@ -47,21 +47,25 @@
                     <p class="text-sub">Destination : </p>
                     <p class="text-sub">Places disponibles : </p>
                     <p class="text-sub">Fumeurs/euses ? :</p>
+                    <p class="text-sub">Heure de départ :</p>
+                    <p class="text-sub">Date de départ :</p>
                     
                 </div>
                 <div class="info-field">
                     <input type="text" class="field">
                     <input type="text" class="field">
-                    <div class="seatbar">
-                    <img src="/Ressources/seat1.png" class="seatpic">
-                    <img src="/Ressources/seat1.png" class="seatpic">
-                    <img src="/Ressources/seat0.png" class="seatpic">
-                    <img src="/Ressources/seat0.png" class="seatpic">
-                    <img src="/Ressources/seat0.png" class="seatpic">
+                    <div id="sieges-container">
+                        <img src="/Ressources/siege-gris.png" alt="Siège gris" class="siege gris" data-siege-index="0">
+                        <img src="/Ressources/siege-gris.png" alt="Siège gris" class="siege gris" data-siege-index="1">
+                        <img src="/Ressources/siege-gris.png" alt="Siège gris" class="siege gris" data-siege-index="2">
+                        <img src="/Ressources/siege-gris.png" alt="Siège gris" class="siege gris" data-siege-index="3">
+                        <img src="/Ressources/siege-gris.png" alt="Siège gris" class="siege gris" data-siege-index="4">
                     </div>
                     <div class="choices-bar">
-                        <p class="choices-text">Oui</p> <input type="checkbox"> <p class="choices-text">Non</p> <input type="checkbox">
-                    </div> 
+                        <label class="choices-text" for="oui">Oui</label> <input type="radio" value="oui" name="choix"> <label class="choices-text" for="non">Non</label> <input type="radio" value="non" name="choix">
+                    </div>
+                    <input type="time" class="field">
+                    <input type="date" class="field"> 
                 </div>
             </div>
             <div class="group-2">
@@ -88,6 +92,7 @@
 </div>
 
 </footer> 
+<script src="/JS/nombreplaces.js"></script>  
 <script src="/JS/burgermenu.js"></script>  
 </body>
 </html>

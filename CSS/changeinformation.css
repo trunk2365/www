@@ -159,7 +159,7 @@ main {
     
     .group-2 {
         display: flex;
-        margin: 1vh;
+        margin: 2vh;
         width: 100%;
     }
     
@@ -176,7 +176,7 @@ main {
         }
     
         .description {
-            height: 150px;
+            height: 90px;
             width: 50%;
             margin: 1vh;
             margin-left: 4vh;

@@ -27,10 +27,8 @@ main {
         flex-direction: column;
         justify-content:space-around;
         width: 100%;
-        margin-top: 1vh;
-        
-        
-        
+        height: 445px;
+        margin-top: 1vh; 
     }
 
         .field {
@@ -38,15 +36,24 @@ main {
             margin: 1.8vh;   
         }
 
-        .seatbar {
+        #sieges-container {
             display: flex;
-            width: 250px;
+            width: auto; /* Ajustez la largeur selon vos besoins */
             margin: 1vh;
+            flex-wrap: wrap; /* Permet aux sièges de passer à la ligne si nécessaire */
         }
-
-            .seatpic {
-                width: 50px;
-            }
+        
+        .siege {
+            width: 40px;
+        }
+        
+        .gris {
+            /* Styles spécifiques aux sièges gris (si nécessaire) */
+        }
+        
+        .noir {
+            /* Styles spécifiques aux sièges noirs (si nécessaire) */
+        }
         
         .choices-bar {
             display: flex;
@@ -61,6 +68,7 @@ main {
 
     .name-field {
         width: 500px;
+        height: 445px;
     }
 
         .text-sub {
@@ -101,91 +109,122 @@ main {
     @media (max-width:768px) {
 
         main {
-            margin-inline: 1%;
+            margin-inline: 0%;
         }
 
         .form-group {
             display: flex;
             flex-direction: column;
             background-color: #F0F0F0;
-            width: 370px;
-            height: 400px;
-            margin: 2vh;
-            margin-left: 1vh;
+            width: 95%;
+            height: 500px;
+            margin: 1vh;
             padding: 0vh;
             border-radius: 1%;
             box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
             margin-bottom: 25vh;
         }
         
-        form {
-            padding: 0vh;
-            margin: 0vh;
-        }
-        
-        
-        .group-1 {
-            display: flex;
-            width: 350px;
-        }
-        
-            .info-field {
-                display: flex;
-                flex-direction: column;
-                justify-content:space-around;
-                width: 50%;
-                margin-top: 1vh;
-                
-                
-                
+            form {
+                padding: 0vh;
+                margin: 0vh;
             }
-        
-                .field {
-                    width: 80%;
-                    margin: 1vh;   
-                }
-        
-                .seatbar {
-                    display: flex;
-                    width: 60px;
-                    margin: 1vh;
-                }
-        
-                    .seatpic {
-                        width: 30px;
-                        margin-bottom: 1vh;
-                    }
-                
-                .choices-bar {
-                    display: flex;
-                    margin-bottom: 0.5vh;
-                }
-        
-                    .choices-text {
-                        margin-inline: 1vh;
-                    }
-        
-        
-        
-            .name-field {
-                width: 200px;
-            }
-        
-                .text-sub {
-                    margin-block: 2vh;
-                    padding: 1vh;
-                }
-        
             
-        .group-2 {
-            display: flex;
-            justify-content: right;
-            margin-top: 5vh;
-        }
-        
-            .sub-button {
-                width: 150px;
-                height: 40px;
+            
+            .group-1 {
+                width: 350px;
+                height: 400px;
             }
-    
-    }
+            
+                .info-field {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+                    margin-top: 2vh;
+                    width: 170px;
+                    height: 330px;
+                    padding: 0vh;
+                    margin: 0vh;
+                    
+                    
+                    
+                }
+            
+                    .field {
+                        width: 80%;
+                        height: 25px;
+                        padding: 0vh;
+                        margin: 0vh;
+                    }
+            
+                    #sieges-container {
+                        display: flex;
+                        width: auto; /* Ajustez la largeur selon vos besoins */
+                        height: 35px;
+                        flex-wrap: wrap; /* Permet aux sièges de passer à la ligne si nécessaire */
+                        margin: 0vh;
+                    }
+                    
+                    .siege {
+                        width: 30px;
+                        height: 40px;
+                        padding: 0vh;
+                        margin: 0vh;
+                    }
+                    
+                    .gris {
+                        /* Styles spécifiques aux sièges gris (si nécessaire) */
+                    }
+                    
+                    .noir {
+                        /* Styles spécifiques aux sièges noirs (si nécessaire) */
+                    }
+
+
+                    
+                    .choices-bar {
+                        display: flex;
+                        align-items: center;
+                        height: 50px;
+                        padding: 0vh;
+                        margin: 0vh;
+                    }
+            
+                        .choices-text {
+                            margin-inline: 1vh;
+                            margin-block: 0vh;
+                        }
+            
+            
+            
+                .name-field {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+                    width: 170px;
+                    height: 330px;
+                    margin-left: 1vh;
+                }
+            
+                    .text-sub {
+                        display: flex;
+                        align-items: center;
+                        height: 50px;
+                        padding: 0vh;
+                        margin: 0vh;
+                    }
+            
+                
+            .group-2 {
+                display: flex;
+                justify-content: right;
+                margin-top: 5vh;
+                width: 330px;
+            }
+            
+                .sub-button {
+                    width: 150px;
+                    height: 40px;
+                }
+        
+        }
