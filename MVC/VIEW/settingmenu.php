@@ -42,7 +42,8 @@
     <div class="menu-account">
         <div class="back-button"><a class="menu-button-style2" href="/MVC/VIEW/myaccount.php">Précédent</a></div>
         <div class="menu-button"><a href="/MVC/VIEW/changeinformation.php" class="menu-button-style2">Changer vos informations</a></div>
-        <div class="menu-button"><a href="/MVC/VIEW/changemail.php" class="menu-button-style2">Changer mot de passe/Adresse mail</a></div>
+        <div class="menu-button"><a href="/MVC/VIEW/changemail.php" class="menu-button-style2">Changer votre adresse mail</a></div>
+        <div class="menu-button"><a href="/MVC/VIEW/changepassword.php" class="menu-button-style2">Changer votre mot de passe</a></div>
     </div>
 
 </main>

@@ -1,3 +1,7 @@
+<?php
+
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -40,15 +44,15 @@
 
 <main>
     <div class="form-group-login">
-        <form>
+        <form method="post" action="/MVC/CONTROLLER/connexion_traitement.php">
             <div class="group-1">
                 <div class="name-field">
                     <p class="text-sub">Nom d'utilisateur : </p>
                     <p class="text-sub">Mot de passe : </p>
                 </div>
                 <div class="info-field">
-                    <input type="text" class="field">
-                    <input type="text" class="field">
+                    <input type="text" class="field" name="PSEUDO_USER" id="pseudo_user" required>
+                    <input type="text" class="field" name="PASSWORD" id="password" required>
                 </div>
             </div>
             <div class="group-2">

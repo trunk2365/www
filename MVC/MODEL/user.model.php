@@ -66,22 +66,43 @@ function createUser($pseudo, $prenom, $nom, $email, $password) {
 }
 
 // Mettre à jour un utilisateur
+// function updateUser($id, $nom, $email, $password) {
+//     $pdo = getConnexion();
+//     $sql = "UPDATE klftcclft_users SET FIRSTNAME = :FIRSTNAME, EMAIL = :EMAIL, PASSWORD = :PASSWORD WHERE ID_USER = :ID_USER";
+//     // if (!empty($password)) {
+//     //     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+//     //     $stmt->bindParam(':password', $hashedPassword, PDO::PARAM_STR);
+//     // } else {
+//     //     // Si le mot de passe n'est pas modifié, ne pas le mettre à jour
+//     //     $sql = "UPDATE users SET nom = :nom, email = :email WHERE id = :id";
+//     // }
+//     try {
+//         $stmt = $pdo->prepare($sql);
+//         $stmt->bindParam(':ID_USER', $id, PDO::PARAM_INT);
+//         $stmt->bindParam(':FIRSTNAME', $nom, PDO::PARAM_STR);
+//         $stmt->bindParam(':EMAIL', $email, PDO::PARAM_STR);
+//         $stmt->bindParam(':PASSWORD', $password, PDO::PARAM_STR);
+//         return $stmt->execute();
+//     } catch(PDOException $e) {
+//         echo "Erreur lors de la mise à jour de l'utilisateur : " . $e->getMessage();
+//         return false;
+//     }
+// }
+
 function updateUser($id, $nom, $email, $password) {
     $pdo = getConnexion();
     $sql = "UPDATE klftcclft_users SET FIRSTNAME = :FIRSTNAME, EMAIL = :EMAIL, PASSWORD = :PASSWORD WHERE ID_USER = :ID_USER";
-    // if (!empty($password)) {
-    //     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-    //     $stmt->bindParam(':password', $hashedPassword, PDO::PARAM_STR);
-    // } else {
-    //     // Si le mot de passe n'est pas modifié, ne pas le mettre à jour
-    //     $sql = "UPDATE users SET nom = :nom, email = :email WHERE id = :id";
-    // }
+
     try {
         $stmt = $pdo->prepare($sql);
         $stmt->bindParam(':ID_USER', $id, PDO::PARAM_INT);
         $stmt->bindParam(':FIRSTNAME', $nom, PDO::PARAM_STR);
         $stmt->bindParam(':EMAIL', $email, PDO::PARAM_STR);
-        $stmt->bindParam(':PASSWORD', $password, PDO::PARAM_STR);
+
+        // Hachage du mot de passe avant de le lier à la requête
+        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+        $stmt->bindParam(':PASSWORD', $hashedPassword, PDO::PARAM_STR);
+
         return $stmt->execute();
     } catch(PDOException $e) {
         echo "Erreur lors de la mise à jour de l'utilisateur : " . $e->getMessage();
