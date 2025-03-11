@@ -1,6 +1,6 @@
 
 <?php
-require_once '/laragon/www/MVC/MODEL/user.model.php';
+require_once '/laragon/www/MODEL/user.model.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $pseudo = $_POST['PSEUDO_USER'];

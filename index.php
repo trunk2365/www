@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/CSS/style.css">
-    <link rel="stylesheet" href="/CSS/style2.css">
+    <link rel="stylesheet" href="/ASSETS/CSS/style.css">
+    <link rel="stylesheet" href="/ASSETS/CSS/style2.css">
 
     <title>Accueil</title>
 </head>
@@ -12,17 +12,17 @@
 
 <header>
     <div class="flexbar">
-        <img class="logo" src="Ressources/logo.jpg" width="100vh">
+        <img class="logo" src="/ASSETS/IMGS/logo.jpg" width="100vh">
         <form class="searchbar-container">
             <input type="text" placeholder="Point de départ" class="searchbar">
-            <img src="/Ressources/route.png" width="30px" height="30px" class="route-picture">
+            <img src="/ASSETS/IMGS/route.png" width="30px" height="30px" class="route-picture">
             <input type="text" placeholder="Destination" class="searchbar">
           </form>
         <nav class="list">
             <ul>
                 <li><button class="normal-btn"><a href="/index.php">Accueil</a></button></li>
-                <li><button class="normal-btn"><a href="/MVC/VIEW/publication-list.php">Trajets</a></button></li>
-                <li><button class="normal-btn"><a href="/MVC/VIEW/subscribe.php">Inscription</a></button></li>
+                <li><button class="normal-btn"><a href="/VIEW/publication-list.php">Trajets</a></button></li>
+                <li><button class="normal-btn"><a href="/VIEW/subscribe.php">Inscription</a></button></li>
             </ul>
         </nav>
 
@@ -37,8 +37,8 @@
     <nav class="active" id="myNav">
             <ul>
                 <li><button><a href="/index.php">Accueil</a></button></li>
-                <li><button><a href="/MVC/VIEW/publication-list.php">Trajets</a></button></li>
-                <li><button><a href="/MVC/VIEW/subscribe.php">Inscription</a></button></li>
+                <li><button><a href="/VIEW/publication-list.php">Trajets</a></button></li>
+                <li><button><a href="/VIEW/subscribe.php">Inscription</a></button></li>
             </ul>
         </nav>
 
@@ -60,19 +60,19 @@
         <br><span style="font-weight: bold; color: rgb(124, 124, 124)">Réservation sécurisée:</span> Vous pouvez réserver votre place en toute sécurité, en payant directement en ligne.
         <br><span style="font-weight: bold; color: rgb(124, 124, 124)">Partage d'expériences:</span> ZigzagCar, c'est aussi l'occasion de rencontrer de nouvelles personnes, de partager des anecdotes et de découvrir de nouveaux horizons.
         <br><br><br><br>Liste des pages (temporaire) :
-        <br><br><button class="normal-btn"><a href="/MVC/VIEW/settingmenu.php"><span style="font-weight: bold; color: rgb(9, 233, 203)">Parametre</a></button></span>
-        <button class="normal-btn"><a href="/MVC/VIEW/myaccount.php"><span style="font-weight: bold; color: rgb(9, 233, 203)">Mon compte</a></button></span>
-        <button class="normal-btn"><a href="/MVC/VIEW/mypublication.php"><span style="font-weight: bold; color: rgb(9, 233, 203)">Mes publications</a></button></span>
-        <button class="normal-btn"><a href="/MVC/VIEW/myreservation.php"><span style="font-weight: bold; color: rgb(9, 233, 203)">Mes reservations</a></button></span>
-        <button class="normal-btn"><a href="/MVC/VIEW/publish.php"><span style="font-weight: bold; color: rgb(9, 233, 203)">Publier un trajet</a></button></span>
-        <button class="normal-btn"><a href="/MVC/VIEW/loginpage.php"><span style="font-weight: bold; color: rgb(9, 233, 203)">Login Page</a></button></span>
+        <br><br><button class="normal-btn"><a href="/VIEW/settingmenu.php"><span style="font-weight: bold; color: rgb(9, 233, 203)">Parametre</a></button></span>
+        <button class="normal-btn"><a href="/VIEW/myaccount.php"><span style="font-weight: bold; color: rgb(9, 233, 203)">Mon compte</a></button></span>
+        <button class="normal-btn"><a href="/VIEW/mypublication.php"><span style="font-weight: bold; color: rgb(9, 233, 203)">Mes publications</a></button></span>
+        <button class="normal-btn"><a href="/VIEW/myreservation.php"><span style="font-weight: bold; color: rgb(9, 233, 203)">Mes reservations</a></button></span>
+        <button class="normal-btn"><a href="/VIEW/publish.php"><span style="font-weight: bold; color: rgb(9, 233, 203)">Publier un trajet</a></button></span>
+        <button class="normal-btn"><a href="/VIEW/loginpage.php"><span style="font-weight: bold; color: rgb(9, 233, 203)">Login Page</a></button></span>
     
     </p>
 
     </div>
 
     <div class="form-group-title">
-        <img class="img-route" src="/Ressources/road.png" height="60vh"> <h2>Trajets populaires : </h2>
+        <img class="img-route" src="/ASSETS/IMGS/road.png" height="60vh"> <h2>Trajets populaires : </h2>
     </div>
 
     <div class="route-list">
@@ -97,20 +97,13 @@
 
 </main>
 
-<footer>
-<div class="flexfooter">
-    <div class="right-group">
-        <p>ZigzagCar - Tous droits réservés.
-        <br><br>ZigzagCar - Covoiturage simple et rapide.
-        <br>Contactez-nous à l'adresse [mail] ou au [tel].</p>
-    </div>
-    <div class="media-group">
-        <img src="Ressources/facebook.png" height="30vh"><label class="media">Facebook</label>
-        <img src="Ressources/twitter.png" height="30vh"><label class="media">Twitter</label>
-    </div>
-</div>
 
-</footer>
-<script src="/JS/burgermenu.js"></script>
+<?php
+
+include '/laragon/www/VIEW/footer.php'
+
+?>
+
+<script src="/ASSETS/JS/burgermenu.js"></script>
 </body>
 </html>

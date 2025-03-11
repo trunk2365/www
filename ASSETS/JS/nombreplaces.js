@@ -12,14 +12,14 @@ sieges.forEach(siege => {
 
             if (index <= siegeIndex) {
                 console.log('Changer en noir :', s);
-                s.src = '/Ressources/siege-noir.png'; 
+                s.src = '/ASSETS/IMGS/siege-noir.png'; // Chemin corrigé
                 console.log('Nouveau src :', s.src);
                 s.classList.remove('gris');
                 s.classList.add('noir');
                 console.log('Classes :', s.classList);
             } else {
                 console.log('Changer en gris :', s);
-                s.src = '/Ressources/siege-gris.png';
+                s.src = '/ASSETS/IMGS/siege-gris.png'; // Chemin corrigé
                 console.log('Nouveau src :', s.src);
                 s.classList.remove('noir');
                 s.classList.add('gris');
