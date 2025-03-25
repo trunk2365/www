@@ -18,7 +18,7 @@ include '/laragon/www/VIEW/header_connecte.php'
 <main>
 
 <div class="menu-account">
-    <div class="back-button"><a class="menu-button-style2" href="/index.php">Précédent</a></div>
+    <div class="back-button"><a class="menu-button-style2" href="/index.php">Accueil</a></div>
     <div class="menu-button"><a class="menu-button-style2" href="/VIEW/mypublication.php">Mes trajets publiés</a></div>
     <div class="menu-button"><a class="menu-button-style2" href="/VIEW/myreservation.php">Mes réservations</a></div>
     <div class="menu-button"><a class="menu-button-style2" href="/VIEW/settingmenu.php">Profil/paramètre du compte</a></div>

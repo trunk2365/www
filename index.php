@@ -1,3 +1,11 @@
+<?php
+session_start();
+if (isset($_GET['deconnexion']) && $_GET['deconnexion'] === 'reussie') {
+    echo "<p>Déconnexion réussie ! </p>";
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -10,41 +18,11 @@
 </head>
 <body>
 
-<header>
-    <div class="flexbar">
-        <img class="logo" src="/ASSETS/IMGS/logo.jpg" width="100vh">
-        <form class="searchbar-container">
-            <input type="text" placeholder="Point de départ" class="searchbar">
-            <img src="/ASSETS/IMGS/route.png" width="30px" height="30px" class="route-picture">
-            <input type="text" placeholder="Destination" class="searchbar">
-          </form>
-        <nav class="list">
-            <ul>
-                <li><button class="normal-btn"><a href="/index.php">Accueil</a></button></li>
-                <li><button class="normal-btn"><a href="/VIEW/publication-list.php">Trajets</a></button></li>
-                <li><button class="normal-btn"><a href="/VIEW/subscribe.php">Inscription</a></button></li>
-            </ul>
-        </nav>
+<?php
 
-        <!-- Burger menu -->
-        <div class="burger-menu">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-    </div>
+include '/laragon/www/CONTROLLER/header_controller.php'
 
-    <nav class="active" id="myNav">
-            <ul>
-                <li><button><a href="/index.php">Accueil</a></button></li>
-                <li><button><a href="/VIEW/publication-list.php">Trajets</a></button></li>
-                <li><button><a href="/VIEW/subscribe.php">Inscription</a></button></li>
-            </ul>
-        </nav>
-
-    
-
-</header>
+?>
 
 <main>
 

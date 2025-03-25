@@ -1,3 +1,10 @@
+<?php
+session_start();
+var_dump($_SESSION)
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -17,7 +24,7 @@ include '/laragon/www/VIEW/header_deconnecte.php'
 
 <main>
     <div class="form-group-login">
-        <form method="post" action="/MVC/CONTROLLER/connexion_traitement.php">
+        <form method="post" action="/CONTROLLER/connexion_traitement.php">
             <div class="group-1">
                 <div class="name-field">
                     <p class="text-sub">Nom d'utilisateur : </p>

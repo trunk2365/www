@@ -19,6 +19,7 @@ include '/laragon/www/VIEW/header_connecte.php'
 
     <div class="menu-account">
         <div class="back-button"><a class="menu-button-style2" href="/VIEW/myaccount.php">Précédent</a></div>
+        <div class="menu-button"><a href="/VIEW/publish.php" class="menu-button-style2">Publier un trajet</a></div>
         <div class="menu-button"><a href="/VIEW/changeinformation.php" class="menu-button-style2">Changer vos informations</a></div>
         <div class="menu-button"><a href="/VIEW/changemail.php" class="menu-button-style2">Changer votre adresse mail</a></div>
         <div class="menu-button"><a href="/VIEW/changepassword.php" class="menu-button-style2">Changer votre mot de passe</a></div>

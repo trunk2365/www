@@ -1,5 +1,7 @@
 <?php
 require '/laragon/www/CONTROLLER/inscription_traitement.php';
+session_start();
+var_dump($_SESSION);
 ?>
 
 <!DOCTYPE html>
@@ -40,7 +42,7 @@ include '/laragon/www/VIEW/header_deconnecte.php'
             </div>
             <div class="group-2">
                 <div class="upload-picture">
-                    <img src="/Ressources/upload.png" class="img-upload">
+                    <img src="/ASSETS/IMGS/upload.png" class="img-upload">
                 Insérer une photo
                 </div>
                 <input type="text" class="description">
