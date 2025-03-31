@@ -10,5 +10,4 @@
         <img src="/ASSETS/IMGS/twitter.png" height="30vh"><label class="media">Twitter</label>
     </div>
 </div>
-
 </footer>

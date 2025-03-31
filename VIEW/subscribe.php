@@ -17,7 +17,7 @@ var_dump($_SESSION);
 
 <?php
 
-include '/laragon/www/VIEW/header_deconnecte.php'
+include '/laragon/www/CONTROLLER/header_controller.php'
 
 ?>
 

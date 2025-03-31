@@ -11,7 +11,7 @@
 
 <?php
 
-include '/laragon/www/VIEW/header_connecte.php'
+include '/laragon/www/CONTROLLER/header_controller.php'
 
 ?>
 
@@ -43,31 +43,6 @@ include '/laragon/www/VIEW/header_connecte.php'
         </div>
     </div>
 
-    <div class="route-container">
-        <div class="traveltime-container">
-            <p style="font-size: large;"><span>10h20</span></p>
-            <img src="/ASSETS/IMGS/traveltime.png" height="30px">
-            <p class="traveltime"><span style="color:#7e7e7e">1h00</span></p>
-            <img src="/ASSETS/IMGS/traveltime2.png" height="30px">
-            <p style="font-size: large;"><span>11h20</span></p>
-        </div>
-        <div class="price"><img src="/ASSETS/IMGS/tick.png"></div>
-        <div class="from-city"><p>Ville A</p> <img src="/ASSETS/IMGS/route.png" class="route-image"> <p>Ville B</p>
-        </div>
-    </div>
-
-    <div class="route-container">
-        <div class="traveltime-container">
-            <p style="font-size: large;"><span>10h20</span></p>
-            <img src="/ASSETS/IMGS/traveltime.png" height="30px">
-            <p class="traveltime"><span style="color:#7e7e7e">1h00</span></p>
-            <img src="/ASSETS/IMGS/traveltime2.png" height="30px">
-            <p style="font-size: large;"><span>11h20</span></p>
-        </div>
-        <div class="price"><img src="/ASSETS/IMGS/tick.png"></div>
-        <div class="from-city"><p>Ville A</p> <img src="/ASSETS/IMGS/route.png" class="route-image"> <p>Ville B</p>
-        </div>
-    </div>
 
 </main>
 

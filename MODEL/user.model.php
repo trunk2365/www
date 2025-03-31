@@ -66,16 +66,15 @@ function getConnexion() {
                 }
             }
 
-            function updateUser($id, $nom, $email, $password) {
+            function updateUser($pseudo, $nom, $email, $password) {
                 $pdo = getConnexion();
-                $sql = "UPDATE klftcclft_users SET FIRSTNAME = :FIRSTNAME, EMAIL = :EMAIL, PASSWORD = :PASSWORD WHERE ID_USER = :ID_USER";
+                $sql = "UPDATE klftcclft_users SET FIRSTNAME = :FIRSTNAME, EMAIL = :EMAIL, PASSWORD = :PASSWORD WHERE PSEUDO_USER = :PSEUDO_USER";
 
                 try {
                     $stmt = $pdo->prepare($sql);
-                    $stmt->bindParam(':ID_USER', $id, PDO::PARAM_INT);
+                    $stmt->bindParam(':PSEUDO_USER', $pseudo, PDO::PARAM_STR);
                     $stmt->bindParam(':FIRSTNAME', $nom, PDO::PARAM_STR);
                     $stmt->bindParam(':EMAIL', $email, PDO::PARAM_STR);
-
                     // Hachage du mot de passe avant de le lier à la requête
                     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
                     $stmt->bindParam(':PASSWORD', $hashedPassword, PDO::PARAM_STR);
@@ -120,12 +119,14 @@ function getConnexion() {
                             $_SESSION["PSEUDO_USER"] = $user["PSEUDO_USER"];
                             return true;
                         }
-                    
                     }
+
             return false;
 
 
-        
+
+
+
         } catch(PDOException $e) {
             var_dump($e);
             die;

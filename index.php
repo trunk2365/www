@@ -3,6 +3,7 @@ session_start();
 if (isset($_GET['deconnexion']) && $_GET['deconnexion'] === 'reussie') {
     echo "<p>Déconnexion réussie ! </p>";
 }
+var_dump($_SESSION)
 ?>
 
 
@@ -34,7 +35,6 @@ include '/laragon/www/CONTROLLER/header_controller.php'
         <br>
         <br>
         <span style="font-weight: bold; color: rgb(124, 124, 124);">Inscription facile:</span> En quelques clics, vous créez votre profil et indiquez vos trajets réguliers ou occasionnels.
-        <br><span style="font-weight: bold; color: rgb(124, 124, 124)">Mise en relation intelligente:</span> Notre algorithme met en relation les conducteurs et les passagers ayant des itinéraires similaires, en tenant compte de vos préférences (horaire, itinéraire, type de véhicule, etc.).
         <br><span style="font-weight: bold; color: rgb(124, 124, 124)">Réservation sécurisée:</span> Vous pouvez réserver votre place en toute sécurité, en payant directement en ligne.
         <br><span style="font-weight: bold; color: rgb(124, 124, 124)">Partage d'expériences:</span> ZigzagCar, c'est aussi l'occasion de rencontrer de nouvelles personnes, de partager des anecdotes et de découvrir de nouveaux horizons.
         <br><br><br><br>Liste des pages (temporaire) :
@@ -44,7 +44,7 @@ include '/laragon/www/CONTROLLER/header_controller.php'
         <button class="normal-btn"><a href="/VIEW/myreservation.php"><span style="font-weight: bold; color: rgb(9, 233, 203)">Mes reservations</a></button></span>
         <button class="normal-btn"><a href="/VIEW/publish.php"><span style="font-weight: bold; color: rgb(9, 233, 203)">Publier un trajet</a></button></span>
         <button class="normal-btn"><a href="/VIEW/loginpage.php"><span style="font-weight: bold; color: rgb(9, 233, 203)">Login Page</a></button></span>
-    
+        <button class="normal-btn"><a href="/VIEW/admindashboard.php"><span style="font-weight: bold; color: rgb(9, 233, 203)">Admin</a></button></span>
     </p>
 
     </div>

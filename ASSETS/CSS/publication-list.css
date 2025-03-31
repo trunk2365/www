@@ -1,5 +1,13 @@
 main {
     margin-inline:0%;
+    flex: 1;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
 }
 
 .container {
@@ -91,6 +99,10 @@ main {
 
                 .profile-picture {
                     margin-right: 2vh;
+                }
+
+                .car {
+                    margin-left: 10vh;
                 }
 
 

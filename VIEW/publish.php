@@ -11,7 +11,7 @@
 
 <?php
 
-include '/laragon/www/VIEW/header_connecte.php'
+include '/laragon/www/CONTROLLER/header_controller.php'
 
 ?>
 

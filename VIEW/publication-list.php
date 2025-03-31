@@ -19,6 +19,8 @@ include '/laragon/www/CONTROLLER/header_controller.php';
 
 <main>
 
+
+<!-- Les filtres -->
 <div class="container">
     <div class="filter-container">
         <label class="label-input" for="monCheckbox">Prix</label>
@@ -46,24 +48,16 @@ include '/laragon/www/CONTROLLER/header_controller.php';
             <option value="option2">Demain</option>
             <option value="option3">Dans une semaine</option>
             <option value="option3">Préciser le jour</option>
-            </select>
-            
+            </select>      
     </div>
 
+
+
+
+
+<!-- Les publications -->
     <div class="publication-container">
-        <div class="route-container">
-            <div class="traveltime-container">
-                <p style="font-size: large;"><span>10h20</span></p>
-                <img src="/ASSETS/IMGS/traveltime.png" height="30px">
-                <p class="traveltime"><span style="color:#7e7e7e">1h00</span></p>
-                <img src="/ASSETS/IMGS/traveltime2.png" height="30px">
-                <p style="font-size: large;"><span>11h20</span></p>
-            </div>
-            <div class="price">50€</div>
-            <div class="from-city"><p>Ville A</p> <img src="/ASSETS/IMGS/route.png" class="route-image"> <p>Ville B</p>
-            </div>
-            <div class="profile-container"><img src="/ASSETS/IMGS/profile.png" class="profile-picture"><p>Nom d'utilisateur</p></div>
-        </div>
+
 
         <div class="route-container">
             <div class="traveltime-container">
@@ -76,36 +70,12 @@ include '/laragon/www/CONTROLLER/header_controller.php';
             <div class="price">50€</div>
             <div class="from-city"><p>Ville A</p> <img src="/ASSETS/IMGS/route.png" class="route-image"> <p>Ville B</p>
             </div>
-            <div class="profile-container"><img src="/ASSETS/IMGS/profile.png" class="profile-picture"><p>Nom d'utilisateur</p></div>
+            <div class="profile-container"><img src="/ASSETS/IMGS/profile.png" class="profile-picture"><p>Nom d'utilisateur</p>
+            <p class="car">Véhicule :<p>
+            </div>  
         </div>
 
-        <div class="route-container">
-            <div class="traveltime-container">
-                <p style="font-size: large;"><span>10h20</span></p>
-                <img src="/ASSETS/IMGS/traveltime.png" height="30px">
-                <p class="traveltime"><span style="color:#7e7e7e">1h00</span></p>
-                <img src="/ASSETS/IMGS/traveltime2.png" height="30px">
-                <p style="font-size: large;"><span>11h20</span></p>
-            </div>
-            <div class="price">50€</div>
-            <div class="from-city"><p>Ville A</p> <img src="/ASSETS/IMGS/route.png" class="route-image"> <p>Ville B</p>
-            </div>
-            <div class="profile-container"><img src="/ASSETS/IMGS/profile.png" class="profile-picture"><p>Nom d'utilisateur</p></div>
-        </div>
 
-        <div class="route-container">
-            <div class="traveltime-container">
-                <p style="font-size: large;"><span>10h20</span></p>
-                <img src="/ASSETS/IMGS/traveltime.png" height="30px">
-                <p class="traveltime"><span style="color:#7e7e7e">1h00</span></p>
-                <img src="/ASSETS/IMGS/traveltime2.png" height="30px">
-                <p style="font-size: large;"><span>11h20</span></p>
-            </div>
-            <div class="price">50€</div>
-            <div class="from-city"><p>Ville A</p> <img src="/ASSETS/IMGS/route.png" class="route-image"> <p>Ville B</p>
-            </div>
-            <div class="profile-container"><img src="/ASSETS/IMGS/profile.png" class="profile-picture"><p>Nom d'utilisateur</p></div>
-        </div>
     </div>
 </div>
 

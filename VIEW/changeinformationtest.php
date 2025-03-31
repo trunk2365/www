@@ -1,3 +1,11 @@
+<?php
+
+require '/laragon/www/CONTROLLER/update_traitement.php';
+session_start();
+var_dump($_SESSION);
+
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -13,21 +21,25 @@
 
 include '/laragon/www/CONTROLLER/header_controller.php'
 
-
 ?>
 
 <main>
-
     <div class="form-group-subscribe">
-        <form>
+        <form method="post">
             <div class="group-1">
                 <div class="name-field">
                     <p class="text-sub">Nom : </p>
                     <p class="text-sub">Prénom : </p>
+                    <p class="text-sub">Nouvelle adresse mail : </p>
+                    <p class="text-sub">Nouveau mot de passe : </p>
+
                 </div>
                 <div class="info-field">
-                    <input type="text" class="field">
-                    <input type="text" class="field">
+                
+                    <input type="text" class="field" name="LASTNAME" id="lastname" required>
+                    <input type="text" class="field" name="FIRSTNAME" id="firstname" required>
+                    <input type="text" class="field" name="EMAIL" id="email" required>
+                    <input type="text" class="field" name="PASSWORD" id="password" required>
                 </div>
             </div>
             <div class="group-2">
