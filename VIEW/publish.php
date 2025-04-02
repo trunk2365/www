@@ -1,3 +1,9 @@
+<?php
+session_start();
+var_dump($_SESSION)
+
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -11,26 +17,28 @@
 
 <?php
 
-include '/laragon/www/CONTROLLER/header_controller.php'
+include '/laragon/www/CONTROLLER/header_controller.php';
+include '/laragon/www/CONTROLLER/create_trajet_traitement.php';
+var_dump($_POST);
 
 ?>
 
 <main>
     <div class="form-group">
-        <form>
+        <form method="post">
             <div class="group-1">
                 <div class="name-field">
                     <p class="text-sub">Point de rencontre : </p>
                     <p class="text-sub">Destination : </p>
                     <p class="text-sub">Places disponibles : </p>
-                    <p class="text-sub">Fumeurs/euses ? :</p>
                     <p class="text-sub">Heure de départ :</p>
                     <p class="text-sub">Date de départ :</p>
-                    
+                    <p class="text-sub">Prix souhaité :</p>
                 </div>
+
                 <div class="info-field">
-                    <input type="text" class="field">
-                    <input type="text" class="field">
+                    <input type="text" class="field" name="VILLE_DEPART">
+                    <input type="text" class="field" name="VILLE_ARRIVEE">
                     <div id="sieges-container">
                         <img src="/ASSETS/IMGS/siege-gris.png" alt="Siège gris" class="siege gris" data-siege-index="0">
                         <img src="/ASSETS/IMGS/siege-gris.png" alt="Siège gris" class="siege gris" data-siege-index="1">
@@ -38,11 +46,11 @@ include '/laragon/www/CONTROLLER/header_controller.php'
                         <img src="/ASSETS/IMGS/siege-gris.png" alt="Siège gris" class="siege gris" data-siege-index="3">
                         <img src="/ASSETS/IMGS/siege-gris.png" alt="Siège gris" class="siege gris" data-siege-index="4">
                     </div>
-                    <div class="choices-bar">
-                        <label class="choices-text" for="oui">Oui</label> <input type="radio" value="oui" name="choix"> <label class="choices-text" for="non">Non</label> <input type="radio" value="non" name="choix">
-                    </div>
-                    <input type="time" class="field">
-                    <input type="date" class="field"> 
+                    <input type="hidden" id="nombre_places" name="PLACES_DISPONIBLES" value="">
+                    <input type="time" class="field" name="HEURE_DEPART">
+                    <input type="date" class="field" name="DATE_DEPART">
+                    <input type="number" class="field" name="PRIX">
+                    
                 </div>
             </div>
             <div class="group-2">

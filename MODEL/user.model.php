@@ -1,20 +1,7 @@
 <?php
 // model/user.model.php
 
-// Configuration de la connexion à la base de données
-function getConnexion() {
-    try {
-        $dsn = "mysql:host=localhost;dbname=zigzagcar;charset=utf8mb4";
-        $user = "root";
-        $pass = "testostas123";
-        $pdo = new PDO($dsn, $user, $pass);
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        return $pdo;
-    } catch(PDOException $e) {
-        echo "Erreur de connexion : " . $e->getMessage();
-        die();
-    }
-}
+include '/laragon/www/MODEL/connexion_sql.php';
 
             // Récupérer tous les utilisateurs (id et nom uniquement)
             function getAllUsers() {
@@ -117,6 +104,9 @@ function getConnexion() {
                     if (isset($user) && !empty($user)) {
                         if (password_verify($password, $user['PASSWORD'])) {
                             $_SESSION["PSEUDO_USER"] = $user["PSEUDO_USER"];
+                            $_SESSION["LASTNAME"] = $user["LASTNAME"];
+                            $_SESSION["FIRSTNAME"] = $user["FIRSTNAME"];
+                            $_SESSION["EMAIL"] = $user["EMAIL"];
                             return true;
                         }
                     }

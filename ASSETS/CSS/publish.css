@@ -27,43 +27,24 @@ main {
         flex-direction: column;
         justify-content:space-around;
         width: 100%;
-        height: 445px;
-        margin-top: 1vh; 
+        height: 500px;
+        margin-top: 1.0vh; 
     }
 
         .field {
             width: 90%;
-            margin: 1.8vh;   
         }
 
         #sieges-container {
             display: flex;
             width: auto; /* Ajustez la largeur selon vos besoins */
-            margin: 1vh;
             flex-wrap: wrap; /* Permet aux sièges de passer à la ligne si nécessaire */
+
         }
         
         .siege {
             width: 40px;
         }
-        
-        .gris {
-            /* Styles spécifiques aux sièges gris (si nécessaire) */
-        }
-        
-        .noir {
-            /* Styles spécifiques aux sièges noirs (si nécessaire) */
-        }
-        
-        .choices-bar {
-            display: flex;
-            margin-bottom: 1.2vh;
-        }
-
-            .choices-text {
-                margin: 2vh;
-            }
-
 
 
     .name-field {
@@ -72,7 +53,7 @@ main {
     }
 
         .text-sub {
-            margin-block: 2vh;
+            margin-block: 2.9vh;
             padding: 2vh;
         }
 

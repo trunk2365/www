@@ -14,6 +14,8 @@
 session_start();
 var_dump($_SESSION);
 include '/laragon/www/CONTROLLER/header_controller.php';
+include '/laragon/www/MODEL/trajet_model.php';
+$trajets = getAllTrajets();
 
 ?>
 
@@ -58,22 +60,23 @@ include '/laragon/www/CONTROLLER/header_controller.php';
 <!-- Les publications -->
     <div class="publication-container">
 
-
+        <?php if (!empty($trajets)) : ?>
+        <?php foreach ($trajets as $trajet) : ?>
         <div class="route-container">
             <div class="traveltime-container">
-                <p style="font-size: large;"><span>10h20</span></p>
-                <img src="/ASSETS/IMGS/traveltime.png" height="30px">
-                <p class="traveltime"><span style="color:#7e7e7e">1h00</span></p>
-                <img src="/ASSETS/IMGS/traveltime2.png" height="30px">
-                <p style="font-size: large;"><span>11h20</span></p>
+            <p>Heure de départ : <p> <p style="font-size: large;"><span><?=date('H:i', strtotime($trajet['HEURE_DEPART'])) ?></span></p>
             </div>
-            <div class="price">50€</div>
-            <div class="from-city"><p>Ville A</p> <img src="/ASSETS/IMGS/route.png" class="route-image"> <p>Ville B</p>
+            <div class="price"><?=$trajet['PRIX'] ?><p>€<p></div>
+            <div class="from-city"><p> <?=$trajet['VILLE_DEPART'] ?> </p> <img src="/ASSETS/IMGS/route.png" class="route-image"> <p> <?=$trajet['VILLE_ARRIVEE'] ?> </p>
             </div>
-            <div class="profile-container"><img src="/ASSETS/IMGS/profile.png" class="profile-picture"><p>Nom d'utilisateur</p>
-            <p class="car">Véhicule :<p>
+            <div class="profile-container"><img src="/ASSETS/IMGS/profile.png" class="profile-picture"><p> <?=$_SESSION['PSEUDO_USER'] ?> </p>
             </div>  
         </div>
+        <?php endforeach; ?>
+        <?php else : ?>
+        <p>Aucun trajet trouvé.</p>
+        <?php endif; ?>
+
 
 
     </div>

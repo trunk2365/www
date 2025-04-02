@@ -3,6 +3,7 @@
 require_once '/laragon/www/MODEL/user.model.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $id = $_SESSION['ID_USER'];
     $pseudo = $_POST['PSEUDO_USER'];
     $prenom = $_POST['FIRSTNAME'];
     $nom = $_POST['LASTNAME'];

@@ -45,6 +45,7 @@ include '/laragon/www/CONTROLLER/header_controller.php'
         <button class="normal-btn"><a href="/VIEW/publish.php"><span style="font-weight: bold; color: rgb(9, 233, 203)">Publier un trajet</a></button></span>
         <button class="normal-btn"><a href="/VIEW/loginpage.php"><span style="font-weight: bold; color: rgb(9, 233, 203)">Login Page</a></button></span>
         <button class="normal-btn"><a href="/VIEW/admindashboard.php"><span style="font-weight: bold; color: rgb(9, 233, 203)">Admin</a></button></span>
+        <button class="normal-btn"><a href="/VIEW/profileuser.php"><span style="font-weight: bold; color: rgb(9, 233, 203)">Profile</a></button></span>
     </p>
 
     </div>
