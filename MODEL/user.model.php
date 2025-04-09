@@ -103,6 +103,7 @@ include '/laragon/www/MODEL/connexion_sql.php';
 
                     if (isset($user) && !empty($user)) {
                         if (password_verify($password, $user['PASSWORD'])) {
+                            $_SESSION["ID_USER"] = $user["ID_USER"];
                             $_SESSION["PSEUDO_USER"] = $user["PSEUDO_USER"];
                             $_SESSION["LASTNAME"] = $user["LASTNAME"];
                             $_SESSION["FIRSTNAME"] = $user["FIRSTNAME"];

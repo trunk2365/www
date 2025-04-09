@@ -1,7 +1,5 @@
 <?php
 require '/laragon/www/CONTROLLER/inscription_traitement.php';
-session_start();
-var_dump($_SESSION);
 ?>
 
 <!DOCTYPE html>

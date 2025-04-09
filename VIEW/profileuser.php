@@ -1,7 +1,7 @@
 <?php
+
 require '/laragon/www/CONTROLLER/delete_traitement.php';
-session_start();
-var_dump($_SESSION);
+
 ?>
 
 <!DOCTYPE html>
@@ -34,7 +34,6 @@ include '/laragon/www/CONTROLLER/header_controller.php'
             </div>
             <button class="sub-button">Supprimer votre compte</button>
         </form>
-        
     </div>
 
     

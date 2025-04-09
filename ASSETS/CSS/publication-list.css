@@ -46,7 +46,7 @@ body {
             flex-wrap: wrap;
             background-color:#f0f0f0;
             width: 600px;
-            height: 130px;
+            height: 150px;
             margin: 3vh;
             padding: 2vh;
             border-radius: 1%;
@@ -104,6 +104,39 @@ body {
                 .car {
                     margin-left: 10vh;
                 }
+
+
+            .button-container {
+                width: 400%;
+                display: flex;
+                flex-direction:row;
+                justify-content: end;
+
+                }
+
+                .reserved {
+                    padding: 10px 20px;
+                    border: none; 
+                    background-color: #e0e0e0; 
+                    color: #333; 
+                    text-align: center; 
+                    text-decoration: none; 
+                    font-size: 16px; 
+                    font-family: sans-serif; 
+                    cursor: pointer; 
+                    border-radius: 5px; 
+                    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); 
+                }
+
+            .complet {
+                width: 300px;
+                font-size:larger;
+                display: flex;
+                flex-direction: row;
+                justify-content: end;
+                align-items: end;  
+            }
+
 
 
 

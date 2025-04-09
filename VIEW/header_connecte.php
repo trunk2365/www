@@ -19,7 +19,7 @@
             <ul>
                 <li><button class="normal-btn"><a href="/index.php">Accueil</a></button></li>
                 <li><button class="normal-btn"><a href="/VIEW/publication-list.php">Trajets</a></button></li>
-                <li><button class="normal-btn"><a href="/VIEW/settingmenu.php">Mon compte</a></button></li>
+                <li><button class="normal-btn"><a href="/VIEW/myaccount.php">Mon compte</a></button></li>
                 <li><button class="normal-btn"><a href="/VIEW/logout.php">Deconnexion</a></button></li>
             </ul>
         </div>
@@ -37,8 +37,8 @@
             <ul>
                 <li><button><a href="/index.php">Accueil</a></button></li>
                 <li><button><a href="/VIEW/publication-list.php">Trajets</a></button></li>
-                <li><button><a href="#">Mon compte</a></button></li>
-                <li><button><a href="#">Deconnexion</a></button></li>
+                <li><button><a href="/VIEW/myaccount.php">Mon compte</a></button></li>
+                <li><button><a href="/VIEW/logout.php">Deconnexion</a></button></li>
             </ul>
         </nav>
 </header>

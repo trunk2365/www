@@ -1,9 +1,8 @@
 <?php
 session_start();
 if (isset($_GET['deconnexion']) && $_GET['deconnexion'] === 'reussie') {
-    echo "<p>Déconnexion réussie ! </p>";
+    echo "<p> Déconnexion réussie ! </p>";
 }
-var_dump($_SESSION)
 ?>
 
 
@@ -14,6 +13,7 @@ var_dump($_SESSION)
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/ASSETS/CSS/style.css">
     <link rel="stylesheet" href="/ASSETS/CSS/style2.css">
+    <link rel="stylesheet" href="/ASSETS/CSS/publication-list2.css">
 
     <title>Accueil</title>
 </head>
@@ -21,14 +21,13 @@ var_dump($_SESSION)
 
 <?php
 
-include '/laragon/www/CONTROLLER/header_controller.php'
+include '/laragon/www/CONTROLLER/header_controller.php';
+include '/laragon/www/MODEL/trajet_model.php';
+    $trajets = getAllTrajets();
 
 ?>
 
 <main>
-
-        
-
     <div class="form-group">
         <p><span style="font-weight: bold;">ZigzagCar</span>, c'est bien plus qu'un simple service de covoiturage. C'est une communauté de voyageurs qui partagent leurs trajets au quotidien, pour aller travailler, partir en week-end.
         <br><br><span style="font-weight: bold; color:#87CEEB; text-decoration:underline">Comment ça marche ? :</span>
@@ -47,39 +46,53 @@ include '/laragon/www/CONTROLLER/header_controller.php'
         <button class="normal-btn"><a href="/VIEW/admindashboard.php"><span style="font-weight: bold; color: rgb(9, 233, 203)">Admin</a></button></span>
         <button class="normal-btn"><a href="/VIEW/profileuser.php"><span style="font-weight: bold; color: rgb(9, 233, 203)">Profile</a></button></span>
     </p>
-
     </div>
 
     <div class="form-group-title">
-        <img class="img-route" src="/ASSETS/IMGS/road.png" height="60vh"> <h2>Trajets populaires : </h2>
+        <img class="img-route" src="/ASSETS/IMGS/road.png" height="60vh"> <h2>Trajets récents : </h2>
     </div>
 
-    <div class="route-list">
-        <div class="form-group-route">
-           <p class="text-route">Trajets > Trajets
-           <br>Trajets depuis :<br>
-           <br><br><span>Nom de la ville numéro 1 : </span><span>prix</span>
-           <br><span>Nom de la ville numéro 1 : </span><span>prix</span>
-           <br><span>Nom de la ville numéro 1 : </span><span>prix</span></p>
-           <img class="img-city" src="https://www.la-poze-travel.com/wp-content/uploads/2021/03/ancien-hotel-de-ville-meximieux-ain-min.jpg">
-        </div>
 
-        <div class="form-group-route">
-            <p class="text-route">Trajets > Trajets
-            <br>Trajets depuis :<br>
-            <br><br><span>Nom de la ville numéro 1 : </span><span>prix</span>
-            <br><span>Nom de la ville numéro 1 : </span><span>prix</span>
-            <br><span>Nom de la ville numéro 1 : </span><span>prix</span></p>
-            <img class="img-city" src="https://upload.wikimedia.org/wikipedia/commons/f/f8/Amsterdam_Westerkerk_Blick_vom_Turm_auf_die_Prinsengracht_2.jpg">
+    <div class="container">
+    <?php if (!empty($trajets)) : ?>
+        <?php foreach ($trajets as $trajet) : ?>
+    
+        <div class="route-container">
+            <div class="traveltime-container">
+                <p>Heure de départ :<p>
+                <p style="font-size: large;"><span><?= date('H:i', strtotime($trajet['HEURE_DEPART'])) ?></span></p>
+            </div>
+            <div class="price"><?= $trajet['PRIX'] ?>
+            <p>€<p>
+            </div>
+            <div class="from-city">
+                <p> <?= $trajet['VILLE_DEPART'] ?> </p> <img src="/ASSETS/IMGS/route.png" class="route-image">
+                <p> <?= $trajet['VILLE_ARRIVEE'] ?> </p>
+            </div>
+            <div class="profile-container"><img src="/ASSETS/IMGS/profile.png" class="profile-picture">
+                <p> <?= $trajet['PSEUDO_USER'] ?></p>
+                    <?php if ($trajet["PLACES_DISPONIBLES"] > 0) :?>
+                        <form method="post" action="/CONTROLLER/create_reservation.php?ID_TRAJET=<?= $trajet["ID_TRAJET"] ?>">
+                            <div class="button-container">
+                                <button class="reserved">Réserver</button>
+                            </div>
+                        </form>
+                    <?php else : ?>
+                        <p class="complet"> Trajet complet ! </p>
+                    <?php endif;?>
+            </div>
         </div>
+        <?php endforeach; ?>
+        <?php else : ?>
+            <p class="notrajet">Aucun trajet n'est disponible pour le moment.</p>
+        <?php endif; ?>
     </div>
 
 </main>
 
-
 <?php
 
-include '/laragon/www/VIEW/footer.php'
+include '/laragon/www/VIEW/footer.php';
 
 ?>
 

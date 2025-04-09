@@ -1,8 +1,3 @@
-<?php
-session_start();
-var_dump($_SESSION)
-?>
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -30,7 +25,7 @@ include '/laragon/www/CONTROLLER/header_controller.php'
                 </div>
                 <div class="info-field">
                     <input type="text" class="field" name="PSEUDO_USER" id="pseudo_user" required>
-                    <input type="text" class="field" name="PASSWORD" id="password" required>
+                    <input type="password" class="field" name="PASSWORD" id="password" required>
                 </div>
             </div>
             <div class="group-2">

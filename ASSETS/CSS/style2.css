@@ -1,3 +1,169 @@
-main {
-    margin-inline: 2% !important;
+
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-inline: auto;
+
 }
+
+    .publication-container {
+        background-color: #ffffff;
+    }
+
+        .route-container {
+            display: flex;
+            flex-wrap: wrap;
+            background-color:#f0f0f0;
+            width: 600px;
+            height: 150px;
+            margin: 3vh;
+            padding: 2vh;
+            border-radius: 1%;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+        }
+
+            .traveltime-container {
+                display: flex;
+                justify-content: space-between;
+                flex-direction: row;
+                align-items: center;
+                margin-inline: 2vh;
+                width: 300px;
+                height: 30px;
+            }
+
+            .price {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 5vh;
+                height: 30px;
+                margin-left: 200px;
+                font-size:x-large;
+            }
+
+            .from-city {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                width: 300px;
+                height: 30px;
+                margin-inline: 2vh;
+            }
+
+                .route-image {
+                    margin-inline: 2vh;
+                }
+
+            .profile-container {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                margin: 2vh;
+                padding: 1vh;
+                width: 60%;
+                border-top: 1px solid rgb(131, 131, 131);
+            }
+
+                .profile-picture {
+                    margin-right: 2vh;
+                }
+
+                .car {
+                    margin-left: 10vh;
+                }
+
+
+            .button-container {
+                width: 400%;
+                display: flex;
+                flex-direction:row;
+                justify-content: end;
+
+                }
+
+                .reserved {
+                    padding: 10px 20px;
+                    border: none; 
+                    background-color: #e0e0e0; 
+                    color: #333; 
+                    text-align: center; 
+                    text-decoration: none; 
+                    font-size: 16px; 
+                    font-family: sans-serif; 
+                    cursor: pointer; 
+                    border-radius: 5px; 
+                    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); 
+                }
+
+            .complet {
+                width: 300px;
+                font-size:larger;
+                display: flex;
+                flex-direction: row;
+                justify-content: end;
+                align-items: end;  
+            }
+
+
+
+
+
+
+
+            @media (max-width:768px) {
+
+            main {
+                margin-inline: 0%;
+            }
+
+                .filter-container {
+                    display: none;
+                    flex-direction: column;
+                    justify-content: center;
+                    width: 450px;
+                    height: 200px;
+                    margin-top: 100px;
+                }
+            
+                .route-container-recent {
+                    display: flex;
+                    flex-wrap: wrap;
+                    background-color:#87CEEB;
+                    width: 300px;
+                    height: 150px;
+                    margin: 2vh;
+                    padding: 2vh;
+                    border-radius: 1%;
+                    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+                }
+                
+                .route-container {
+                    display: flex;
+                    flex-wrap: wrap;
+                    background-color:#f0f0f0;
+                    width: 300px;
+                    height: 150px;
+                    margin: 2vh;
+                    padding: 2vh;
+                    border-radius: 1%;
+                    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+                }
+            
+                    .from-city {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        justify-content: space-between;
+                        width: 300px;
+                        height: 30px;
+                        margin-inline: 2vh;
+                    }
+                
+                    .price {
+                        display: none;
+                    }
+            }

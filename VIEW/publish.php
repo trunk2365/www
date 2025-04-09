@@ -1,9 +1,3 @@
-<?php
-session_start();
-var_dump($_SESSION)
-
-?>
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -19,7 +13,6 @@ var_dump($_SESSION)
 
 include '/laragon/www/CONTROLLER/header_controller.php';
 include '/laragon/www/CONTROLLER/create_trajet_traitement.php';
-var_dump($_POST);
 
 ?>
 

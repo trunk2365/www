@@ -13,7 +13,6 @@
 
 include '/laragon/www/CONTROLLER/header_controller.php'
 
-
 ?>
 
 <main>

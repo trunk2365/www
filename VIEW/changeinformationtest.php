@@ -1,8 +1,6 @@
 <?php
 
 require '/laragon/www/CONTROLLER/update_traitement.php';
-session_start();
-var_dump($_SESSION);
 
 ?>
 

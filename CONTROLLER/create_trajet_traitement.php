@@ -1,3 +1,4 @@
+
 <?php
 
 require_once '/laragon/www/MODEL/trajet_model.php';
@@ -9,12 +10,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $heure = $_POST['HEURE_DEPART'];
     $places = $_POST['PLACES_DISPONIBLES'];
     $price = $_POST['PRIX'];
+    $user = $_SESSION['ID_USER'];
 
-    $result = createTrajet($depart, $arrivee, $date, $heure, $places, $price);
-    var_dump($result);
+    $result = createTrajet($depart, $arrivee, $date, $heure, $places, $price, $user);
 
     if ($result) {
-        echo "Trajet crée avec succès !";
+        echo "<p class='succes-trajet'>Trajet crée avec succès !<p>";
     } else {
         echo "Erreur lors de la création de trajet. (sur le traitement)";
     }

@@ -17,33 +17,43 @@ include '/laragon/www/CONTROLLER/header_controller.php'
 
 <main>
    
-    <div class="route-container-recent">
-        <div class="traveltime-container">
-            <p style="font-size: large;"><span>10h20</span></p>
-            <img src="/Ressources/traveltime.png" height="30px">
-            <p class="traveltime"><span style="color:#7e7e7e">1h00</span></p>
-            <img src="/Ressources/traveltime2.png" height="30px">
-            <p style="font-size: large;"><span>11h20</span></p>
-        </div>
-        <div class="price">50€</div>
-        <div class="from-city"><p>Ville A</p> <img src="/Ressources/route.png" class="route-image"> <p>Ville B</p>
-        </div>
-        <div class="profile-container"><img src="/Ressources/profile.png" class="profile-picture"><p>Nom d'utilisateur</p></div>
-    </div>
+<div class="publication-container">
 
-    <div class="route-container">
-        <div class="traveltime-container">
-            <p style="font-size: large;"><span>10h20</span></p>
-            <img src="/Ressources/traveltime.png" height="30px">
-            <p class="traveltime"><span style="color:#7e7e7e">1h00</span></p>
-            <img src="/Ressources/traveltime2.png" height="30px">
-            <p style="font-size: large;"><span>11h20</span></p>
-        </div>
-        <div class="price">50€</div>
-        <div class="from-city"><p>Ville A</p> <img src="/Ressources/route.png" class="route-image"> <p>Ville B</p>
-        </div>
-        <div class="profile-container"><img src="/Ressources/profile.png" class="profile-picture"><p>Nom d'utilisateur</p></div>
-    </div>
+                <?php if (!empty($trajets)) : ?>
+                    <?php foreach ($trajets as $trajet) : ?>
+                        <div class="route-container">
+                            <div class="traveltime-container">
+                                <p>Heure de départ :
+                                <p>
+                                <p style="font-size: large;"><span><?= date('H:i', strtotime($trajet['HEURE_DEPART'])) ?></span></p>
+                            </div>
+                            <div class="price"><?= $trajet['PRIX'] ?><p>€
+                                <p>
+                            </div>
+                            <div class="from-city">
+                                <p> <?= $trajet['VILLE_DEPART'] ?> </p> <img src="/ASSETS/IMGS/route.png" class="route-image">
+                                <p> <?= $trajet['VILLE_ARRIVEE'] ?> </p>
+                            </div>
+                            <div class="profile-container"><img src="/ASSETS/IMGS/profile.png" class="profile-picture">
+                                <p> <?= $trajet['PSEUDO_USER'] ?></p>
+                                <?php if ($trajet["PLACES_DISPONIBLES"] > 0) :?>
+                                    <form method="post" action="/CONTROLLER/create_reservation.php?ID_TRAJET=<?= $trajet["ID_TRAJET"] ?>">
+                                        <div class="button-container">
+                                            <button class="reserved">Test</button>
+                                        </div>
+                                    </form>
+                                    <?php else : ?>
+                                    <p class="complet"> Trajet complet ! </p>
+                                    <?php endif;?>
+                                <!-- ATTENTION PAS RESERVER UN TRUC DEJA RESERVED -->
+                            </div>
+                        </div>
+
+                    <?php endforeach; ?>
+                <?php else : ?>
+                    <p>Aucun trajets trouvés.</p>
+                <?php endif; ?>
+            </div>
 
 
 </main>
