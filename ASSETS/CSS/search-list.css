@@ -10,40 +10,18 @@ body {
     margin: 0;
 }
 
-.search-icon {
-    width: 24px; /* Ajustez la taille de l'icône selon vos besoins */
-    height: 24px;
-  }
-
 .container {
     display: flex;
-
 }
 
-    .filter-container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        width: 450px;
-        height: 200px;
-        margin: 10px;
-        padding: 3vh;
-        background-color: #e4f7ff;
-        border-radius: 2%;
-    }
-
-        .label-input {
-            margin: auto;
-        }
-
-        .filter-input {
-            margin: auto;
-            width: 50%;
-            align-items: center;
-        }
+.search-result {
+    margin: 5vh;
+}
 
     .publication-container {
         background-color: #ffffff;
+        margin: 10vh;
+        margin-bottom: 10vh;
     }
 
         .route-container {

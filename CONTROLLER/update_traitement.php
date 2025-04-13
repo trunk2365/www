@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $result = updateUser($pseudo, $nom, $email, $password);
 
     if ($result) {
-        echo "<p class='reussite'> Changement réussit !</p>";
+        echo "<p class='reussite'> Changement réussie !</p>";
     } else {
         echo "Erreur lors de la modification de vos informations.";
     }

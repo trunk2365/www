@@ -19,6 +19,7 @@ include '/laragon/www/CONTROLLER/header_controller.php'
 
 <div class="menu-account">
     <div class="back-button"><a class="menu-button-style2" href="/index.php">Accueil</a></div>
+    <div class="menu-button"><a href="/VIEW/publish.php" class="menu-button-style2">Publier un trajet</a></div>
     <div class="menu-button"><a class="menu-button-style2" href="/VIEW/mypublication.php">Mes trajets publiés</a></div>
     <div class="menu-button"><a class="menu-button-style2" href="/VIEW/myreservation.php">Mes réservations</a></div>
     <div class="menu-button"><a class="menu-button-style2" href="/VIEW/settingmenu.php">Profil/paramètre du compte</a></div>

@@ -3,7 +3,7 @@ require_once '/laragon/www/MODEL/user.model.php';
 session_start();
 $_SESSION['PSEUDO_USER'];
 $currentUser = getUserByPseudo($_SESSION['PSEUDO_USER']);
-var_dump($currentUser);
+// var_dump($currentUser); // Supprimez ou commentez cette ligne
 
 function getUserByPseudo($pseudo) {
     $pdo = getConnexion();
@@ -20,13 +20,17 @@ function getUserByPseudo($pseudo) {
 }
 
 if ($currentUser['IS_ADMIN'] === 1) {
-    echo 'Tu es admin';
+    echo 'Suppression du trajet réussie !';
+    // Ici, vous afficherez le contenu de votre tableau de bord admin
+    // y compris les messages de succès/échec de la suppression (via $_GET)
 }
 else header('Location: /index.php');
 
 ?>
 
-function isCurrentUserAdmin()
+
+
+<!-- function isCurrentUserAdmin()
 {
     $isConnected = isset($_SESSION['CURRENT_USER']) && $_SESSION['CURRENT_USER'] !== null;
     $isAdmin = $isConnected && $_SESSION['CURRENT_USER']['IS_ADMIN'];
@@ -47,4 +51,4 @@ $_SESSION['CURRENT_USER'] = [
     'PSEUDO' => 'TOTO',
     'ID_ADMIN' => 1,
     'EMAIL' => 'toto@toto.com'
-];
+]; -->

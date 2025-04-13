@@ -1,11 +1,3 @@
-<?php
-session_start();
-if (isset($_GET['deconnexion']) && $_GET['deconnexion'] === 'reussie') {
-    echo "<p> Déconnexion réussie ! </p>";
-}
-?>
-
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -13,7 +5,6 @@ if (isset($_GET['deconnexion']) && $_GET['deconnexion'] === 'reussie') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/ASSETS/CSS/style.css">
     <link rel="stylesheet" href="/ASSETS/CSS/style2.css">
-    <link rel="stylesheet" href="/ASSETS/CSS/publication-list2.css">
 
     <title>Accueil</title>
 </head>
@@ -24,6 +15,14 @@ if (isset($_GET['deconnexion']) && $_GET['deconnexion'] === 'reussie') {
 include '/laragon/www/CONTROLLER/header_controller.php';
 include '/laragon/www/MODEL/trajet_model.php';
     $trajets = getAllTrajets();
+
+?>
+
+<?php
+
+if (isset($_GET['deconnexion']) && $_GET['deconnexion'] === 'reussie') {
+    echo "<p class='logout-success-message'> Déconnexion réussie ! </p>";
+}
 
 ?>
 
@@ -97,5 +96,6 @@ include '/laragon/www/VIEW/footer.php';
 ?>
 
 <script src="/ASSETS/JS/burgermenu.js"></script>
+<script src="/ASSETS/JS/searchbar.js"></script>
 </body>
 </html>

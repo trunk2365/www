@@ -163,17 +163,7 @@ main {
                         padding: 0vh;
                         margin: 0vh;
                     }
-                    
-                    .gris {
-                        /* Styles spécifiques aux sièges gris (si nécessaire) */
-                    }
-                    
-                    .noir {
-                        /* Styles spécifiques aux sièges noirs (si nécessaire) */
-                    }
-
-
-                    
+                 
                     .choices-bar {
                         display: flex;
                         align-items: center;

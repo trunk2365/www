@@ -108,6 +108,7 @@ include '/laragon/www/MODEL/connexion_sql.php';
                             $_SESSION["LASTNAME"] = $user["LASTNAME"];
                             $_SESSION["FIRSTNAME"] = $user["FIRSTNAME"];
                             $_SESSION["EMAIL"] = $user["EMAIL"];
+                            $_SESSION["IS_ADMIN"] = $user["IS_ADMIN"];
                             return true;
                         }
                     }

@@ -15,33 +15,43 @@ include '/laragon/www/CONTROLLER/header_controller.php'
 
 ?>
 
+<?php
+
+$userId = $_SESSION['ID_USER'];
+
+include '/laragon/www/MODEL/trajet_model.php';
+
+$mesTrajets = getTrajetsByUserId($userId);
+
+?>
+
 <main>
 
-    <div class="route-container-recent">
-        <div class="traveltime-container">
-            <p style="font-size: large;"><span>10h20</span></p>
-            <img src="/ASSETS/IMGS/traveltime.png" height="30px">
-            <p class="traveltime"><span style="color:#7e7e7e">1h00</span></p>
-            <img src="/ASSETS/IMGS/traveltime2.png" height="30px">
-            <p style="font-size: large;"><span>11h20</span></p>
-        </div>
-        <div class="price">Soon</div>
-        <div class="from-city"><p>Ville A</p> <img src="/ASSETS/IMGS/route.png" class="route-image"> <p>Ville B</p>
-        </div>
-    </div>
+<div class="container">
+    <?php if (!empty($mesTrajets)) : ?>
+        <?php foreach ($mesTrajets as $trajet) : ?>
 
-    <div class="route-container">
-        <div class="traveltime-container">
-            <p style="font-size: large;"><span>10h20</span></p>
-            <img src="/ASSETS/IMGS/traveltime.png" height="30px">
-            <p class="traveltime"><span style="color:#7e7e7e">1h00</span></p>
-            <img src="/ASSETS/IMGS/traveltime2.png" height="30px">
-            <p style="font-size: large;"><span>11h20</span></p>
+        <div class="route-container">
+            <div class="traveltime-container">
+                <p>Heure de départ :<p>
+                <p style="font-size: large;"><span><?= date('H:i', strtotime($trajet['HEURE_DEPART'])) ?></span></p>
+            </div>
+            <div class="price"><?= $trajet['PRIX'] ?>
+            <p>€<p>
+            </div>
+            <div class="from-city">
+                <p> <?= $trajet['VILLE_DEPART'] ?> </p> <img src="/ASSETS/IMGS/route.png" class="route-image">
+                <p> <?= $trajet['VILLE_ARRIVEE'] ?> </p>
+            </div>
+            <div class="profile-container"><img src="/ASSETS/IMGS/profile.png" class="profile-picture">
+                <p> <?= $trajet['PSEUDO_USER'] ?></p>
+            </div>
         </div>
-        <div class="price"><img src="/ASSETS/IMGS/tick.png"></div>
-        <div class="from-city"><p>Ville A</p> <img src="/ASSETS/IMGS/route.png" class="route-image"> <p>Ville B</p>
-        </div>
-    </div>
+        <?php endforeach; ?>
+    <?php else : ?>
+        <p class="notrajet">Vous n'avez posté aucun trajet pour le moment.</p>
+    <?php endif; ?>
+</div>
 
 
 </main>

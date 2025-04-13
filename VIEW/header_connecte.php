@@ -9,11 +9,14 @@
                $page_trajet = 'publication-list.php';
                // Afficher le bouton de connexion si l'utilisateur n'est pas sur la page de connexion
                if ($page_courante === $page_accueil || $page_courante === $page_trajet) {
-                   echo '<form class="searchbar-container">
-               <input type="text" placeholder="Point de départ" class="searchbar">
-               <img src="/ASSETS/IMGS/route.png" width="30px" height="30px" class="route-picture">
-               <input type="text" placeholder="Destination" class="searchbar">
-               </form>';
+                   echo '<form action="/VIEW/search_list.php" method="get" class="searchbar-container">
+                        <input type="text" id="ville_depart" name="ville_depart" placeholder="Depart" class="searchbar">
+                        <img src="/ASSETS/IMGS/route.png" width="30px" height="30px" class="route-picture">
+                        <input type="text" id="ville_arrivee" name="ville_arrivee" placeholder="Destination" class="searchbar">
+                    <button type="submit" class="search-button">
+                        <img src="/ASSETS/IMGS/loupe.png" alt="Rechercher" class="search-icon">
+                    </button>
+                    </form>';
                }
             ?>
             <ul>

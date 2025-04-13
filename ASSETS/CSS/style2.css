@@ -108,10 +108,16 @@
                 align-items: end;  
             }
 
+            .notrajet {
+                margin-bottom: 20vh;
+            }
 
+/* Test */
 
-
-
+.search-icon {
+    width: 24px; /* Ajustez la taille de l'icône selon vos besoins */
+    height: 24px;
+  }
 
 
             @media (max-width:768px) {

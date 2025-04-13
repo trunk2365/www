@@ -75,20 +75,27 @@
                                 <p> <?= $trajet['VILLE_ARRIVEE'] ?> </p>
                             </div>
                             <div class="profile-container"><img src="/ASSETS/IMGS/profile.png" class="profile-picture">
-                                <p> <?= $trajet['PSEUDO_USER'] ?></p>
-                                <?php if ($trajet["PLACES_DISPONIBLES"] > 0) :?>
-                                    <form method="post" action="/CONTROLLER/create_reservation.php?ID_TRAJET=<?= $trajet["ID_TRAJET"] ?>">
-                                        <div class="button-container">
-                                            <button class="reserved">Réserver</button>
-                                        </div>
-                                    </form>
-                                    <?php else : ?>
-                                    <p class="complet"> Trajet complet ! </p>
-                                    <?php endif;?>
-                                <!-- ATTENTION PAS RESERVER UN TRUC DEJA RESERVED -->
+                            <p> <?= $trajet['PSEUDO_USER'] ?></p>
+                            <?php if ($trajet["PLACES_DISPONIBLES"] > 0) :?>
+                                <form method="post" action="/CONTROLLER/create_reservation.php?ID_TRAJET=<?= $trajet["ID_TRAJET"] ?>">
+                                    <div class="button-container">
+                                        <button class="reserved">Réserver</button>
+                                    </div>
+                                </form>
+                            <?php else : ?>
+                                <p class="complet"> Trajet complet ! </p>
+                            <?php endif;?>
                             </div>
                         </div>
-
+                        <?php
+                            // Vérifiez si l'utilisateur est un administrateur
+                            if (isset($_SESSION['IS_ADMIN']) && $_SESSION['IS_ADMIN'] == 1) : ?>
+                                <form method="post" action="/CONTROLLER/delete_trajet_traitement.php?ID_TRAJET=<?= $trajet["ID_TRAJET"] ?>">
+                                    <button type="submit" class="delete-button">
+                                        Supprimer
+                                    </button>
+                                </form>
+                            <?php endif; ?>
                     <?php endforeach; ?>
                 <?php else : ?>
                     <p>Aucun trajets trouvés.</p>
