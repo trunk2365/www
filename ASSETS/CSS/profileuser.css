@@ -16,6 +16,7 @@ main {
 
 .group-1 {
     display: flex;
+    flex-direction: column;
 }
 
     .info-field {
@@ -104,6 +105,104 @@ main {
     cursor: pointer; 
     border-radius: 5px; 
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); 
+}
+
+
+
+
+
+
+
+.info-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.edit-icon {
+    cursor: pointer;
+    color: #007bff; /* Couleur de l'icône */
+    margin-left: 10px;
+}
+
+.update-form {
+    margin-top: 10px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    display: none; /* Initialement caché */
+}
+
+.update-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.update-form input[type="text"],
+
+.update-form input[type="email"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+.update-form button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.success-message {
+    color: green;
+    margin-top: 10px;
+}
+
+.error-message {
+    color: red;
+    margin-top: 10px;
+}
+
+.back-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F0F0F0;
+    box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.2);
+    border-radius: 5%;
+    padding: 1.5vh;
+    width: 150px;
+    height: 40px;
+    margin: 2vh;
+}
+
+.menu-button {
+    display: flex;
+    justify-content: center;
+    background-color: #F0F0F0;
+    text-decoration: none;
+    box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.2);
+    border-radius: 5%;
+    padding: 1vh;
+    width: 550px;
+    height: 40px;
+    margin: 5vh;
+    padding: 2vh;   
+}
+
+
+.menu-button-style2 {
+    display: flex;
+    align-items: center;
+    color: inherit;
+    text-decoration: none;
 }
 
 

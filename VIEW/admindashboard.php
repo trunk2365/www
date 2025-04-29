@@ -20,9 +20,12 @@ function getUserByPseudo($pseudo) {
 }
 
 if ($currentUser['IS_ADMIN'] === 1) {
-    echo 'Suppression du trajet réussie !';
-    // Ici, vous afficherez le contenu de votre tableau de bord admin
-    // y compris les messages de succès/échec de la suppression (via $_GET)
+    echo '<div style="background-color: #e6ffe6; color: #28a745; padding: 20px; border: 1px solid #c3e6cb; border-radius: 5px; margin-bottom: 20px; text-align: center;">';
+    echo '<h2 style="color: #28a745; margin-top: 0;">Suppression du trajet réussie !</h2>';
+    echo '<button style="background-color: #28a745; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-size: 1em;">';
+    echo '<a href="/index.php" style="color: white; text-decoration: none;">Retour vers l\'accueil</a>';
+    echo '</button>';
+    echo '</div>';
 }
 else header('Location: /index.php');
 

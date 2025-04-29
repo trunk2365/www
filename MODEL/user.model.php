@@ -53,25 +53,59 @@ include '/laragon/www/MODEL/connexion_sql.php';
                 }
             }
 
-            function updateUser($pseudo, $nom, $email, $password) {
-                $pdo = getConnexion();
-                $sql = "UPDATE klftcclft_users SET FIRSTNAME = :FIRSTNAME, EMAIL = :EMAIL, PASSWORD = :PASSWORD WHERE PSEUDO_USER = :PSEUDO_USER";
+            // function updateUser($pseudo, $prenom, $email, $password) {
+            //     $pdo = getConnexion();
+            //     $sql = "UPDATE klftcclft_users SET FIRSTNAME = :FIRSTNAME, EMAIL = :EMAIL, PASSWORD = :PASSWORD WHERE PSEUDO_USER = :PSEUDO_USER";
 
+            //     try {
+            //         $stmt = $pdo->prepare($sql);
+            //         $stmt->bindParam(':PSEUDO_USER', $pseudo, PDO::PARAM_STR);
+            //         $stmt->bindParam(':FIRSTNAME', $prenom, PDO::PARAM_STR);
+            //         $stmt->bindParam(':EMAIL', $email, PDO::PARAM_STR);
+            //         // Hachage du mot de passe avant de le lier à la requête
+            //         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+            //         $stmt->bindParam(':PASSWORD', $hashedPassword, PDO::PARAM_STR);
+
+            //         return $stmt->execute();
+            //     } catch(PDOException $e) {
+            //         echo "Erreur lors de la mise à jour de l'utilisateur : " . $e->getMessage();
+            //         return false;
+            //     }
+            // }
+            
+            
+            function updateUser($id, $firstname, $lastname, $email, $password = null) {
+                $pdo = getConnexion();
+                $sql = "UPDATE klftcclft_users SET FIRSTNAME = :firstname, LASTNAME = :lastname, EMAIL = :email";
+            
+                if ($password !== null && $password !== '') {
+                    $sql .= ", PASSWORD = :password";
+                }
+            
+                $sql .= " WHERE ID_USER = :id";
+            
                 try {
                     $stmt = $pdo->prepare($sql);
-                    $stmt->bindParam(':PSEUDO_USER', $pseudo, PDO::PARAM_STR);
-                    $stmt->bindParam(':FIRSTNAME', $nom, PDO::PARAM_STR);
-                    $stmt->bindParam(':EMAIL', $email, PDO::PARAM_STR);
-                    // Hachage du mot de passe avant de le lier à la requête
-                    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-                    $stmt->bindParam(':PASSWORD', $hashedPassword, PDO::PARAM_STR);
-
+                    $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+                    $stmt->bindParam(':firstname', $firstname, PDO::PARAM_STR);
+                    $stmt->bindParam(':lastname', $lastname, PDO::PARAM_STR);
+                    $stmt->bindParam(':email', $email, PDO::PARAM_STR);
+            
+                    if ($password !== null && $password !== '') {
+                        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+                        $stmt->bindParam(':password', $hashedPassword, PDO::PARAM_STR);
+                    }
+            
                     return $stmt->execute();
+            
                 } catch(PDOException $e) {
                     echo "Erreur lors de la mise à jour de l'utilisateur : " . $e->getMessage();
                     return false;
                 }
             }
+
+
+
 
             // Supprimer un utilisateur
             function deleteUser($id) {
@@ -98,7 +132,6 @@ include '/laragon/www/MODEL/connexion_sql.php';
                     $stmt->debugDumpParams();
                     $user = $stmt->fetch(PDO::FETCH_ASSOC);
                     $log = ['user' => $user];
-                    var_dump($log);
                 
 
                     if (isset($user) && !empty($user)) {

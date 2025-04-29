@@ -7,12 +7,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = $_POST['PASSWORD'];
 
     $result = connectUser($pseudo, $password);
-    var_dump($result);
+
 
     if ($result) {
         header('Location: /index.php');
     } else {
-        echo "Erreur lors de la connexion.";
+        header('Location: /index.php');
     }
 }
 

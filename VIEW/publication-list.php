@@ -74,17 +74,22 @@
                                 <p> <?= $trajet['VILLE_DEPART'] ?> </p> <img src="/ASSETS/IMGS/route.png" class="route-image">
                                 <p> <?= $trajet['VILLE_ARRIVEE'] ?> </p>
                             </div>
-                            <div class="profile-container"><img src="/ASSETS/IMGS/profile.png" class="profile-picture">
-                            <p> <?= $trajet['PSEUDO_USER'] ?></p>
-                            <?php if ($trajet["PLACES_DISPONIBLES"] > 0) :?>
-                                <form method="post" action="/CONTROLLER/create_reservation.php?ID_TRAJET=<?= $trajet["ID_TRAJET"] ?>">
-                                    <div class="button-container">
-                                        <button class="reserved">Réserver</button>
-                                    </div>
-                                </form>
-                            <?php else : ?>
-                                <p class="complet"> Trajet complet ! </p>
-                            <?php endif;?>
+                            <div class="profile-container">
+                                <img src="/ASSETS/IMGS/profile.png" class="profile-picture">
+                                <p class="pseudo"> <?= $trajet['PSEUDO_USER'] ?></p>
+                                <?php if ($trajet["PLACES_DISPONIBLES"] > 0) :?>
+                                    <form method="post" action="/CONTROLLER/create_reservation.php?ID_TRAJET=<?= $trajet["ID_TRAJET"] ?>">
+                                        <div class="button-container">
+                                            <?php if (!empty($_SESSION)) : ?>
+                                                <button class="reserved">Réserver</button>
+                                            <?php else : ?>
+                                                <p class="not-connected">Connectez-vous pour réserver</p>
+                                            <?php endif; ?>
+                                        </div>
+                                    </form>
+                                <?php else : ?>
+                                    <p class="complet"> Trajet complet</p>
+                                <?php endif;?>
                             </div>
                         </div>
                         <?php

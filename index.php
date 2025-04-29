@@ -24,6 +24,10 @@ if (isset($_GET['deconnexion']) && $_GET['deconnexion'] === 'reussie') {
     echo "<p class='logout-success-message'> Déconnexion réussie ! </p>";
 }
 
+if (isset($_GET['suppression']) && $_GET['suppression'] === 'reussie') {
+    echo "<p class='logout-success-message'> Suppression du compte réussie ! </p>";
+}
+
 ?>
 
 <main>
@@ -35,16 +39,23 @@ if (isset($_GET['deconnexion']) && $_GET['deconnexion'] === 'reussie') {
         <span style="font-weight: bold; color: rgb(124, 124, 124);">Inscription facile:</span> En quelques clics, vous créez votre profil et indiquez vos trajets réguliers ou occasionnels.
         <br><span style="font-weight: bold; color: rgb(124, 124, 124)">Réservation sécurisée:</span> Vous pouvez réserver votre place en toute sécurité, en payant directement en ligne.
         <br><span style="font-weight: bold; color: rgb(124, 124, 124)">Partage d'expériences:</span> ZigzagCar, c'est aussi l'occasion de rencontrer de nouvelles personnes, de partager des anecdotes et de découvrir de nouveaux horizons.
-        <br><br><br><br>Liste des pages (temporaire) :
-        <br><br><button class="normal-btn"><a href="/VIEW/settingmenu.php"><span style="font-weight: bold; color: rgb(9, 233, 203)">Parametre</a></button></span>
-        <button class="normal-btn"><a href="/VIEW/myaccount.php"><span style="font-weight: bold; color: rgb(9, 233, 203)">Mon compte</a></button></span>
-        <button class="normal-btn"><a href="/VIEW/mypublication.php"><span style="font-weight: bold; color: rgb(9, 233, 203)">Mes publications</a></button></span>
-        <button class="normal-btn"><a href="/VIEW/myreservation.php"><span style="font-weight: bold; color: rgb(9, 233, 203)">Mes reservations</a></button></span>
-        <button class="normal-btn"><a href="/VIEW/publish.php"><span style="font-weight: bold; color: rgb(9, 233, 203)">Publier un trajet</a></button></span>
-        <button class="normal-btn"><a href="/VIEW/loginpage.php"><span style="font-weight: bold; color: rgb(9, 233, 203)">Login Page</a></button></span>
-        <button class="normal-btn"><a href="/VIEW/admindashboard.php"><span style="font-weight: bold; color: rgb(9, 233, 203)">Admin</a></button></span>
-        <button class="normal-btn"><a href="/VIEW/profileuser.php"><span style="font-weight: bold; color: rgb(9, 233, 203)">Profile</a></button></span>
-    </p>
+        
+        
+        <?php
+        if (isset($_SESSION['IS_ADMIN']) && $_SESSION['IS_ADMIN'] == 1) {
+        echo "<br><br><br><br>Liste des pages (temporaire) :
+        <br><br><button class=\"normal-btn\"><a href=\"/VIEW/settingmenu.php\"><span style=\"font-weight: bold; color: rgb(9, 233, 203)\">Parametre</a></button></span>
+        <button class=\"normal-btn\"><a href=\"/VIEW/myaccount.php\"><span style=\"font-weight: bold; color: rgb(9, 233, 203)\">Mon compte</a></button></span>
+        <button class=\"normal-btn\"><a href=\"/VIEW/mypublication.php\"><span style=\"font-weight: bold; color: rgb(9, 233, 203)\">Mes publications</a></button></span>
+        <button class=\"normal-btn\"><a href=\"/VIEW/myreservation.php\"><span style=\"font-weight: bold; color: rgb(9, 233, 203)\">Mes reservations</a></button></span>
+        <button class=\"normal-btn\"><a href=\"/VIEW/publish.php\"><span style=\"font-weight: bold; color: rgb(9, 233, 203)\">Publier un trajet</a></button></span>
+        <button class=\"normal-btn\"><a href=\"/VIEW/loginpage.php\"><span style=\"font-weight: bold; color: rgb(9, 233, 203)\">Login Page</a></button></span>
+        <button class=\"normal-btn\"><a href=\"/VIEW/admindashboard.php\"><span style=\"font-weight: bold; color: rgb(9, 233, 203)\">Admin</a></button></span>
+        <button class=\"normal-btn\"><a href=\"/VIEW/profileuser.php\"><span style=\"font-weight: bold; color: rgb(9, 233, 203)\">Profile</a></button></span>";
+        }
+        ?>
+
+        </p>
     </div>
 
     <div class="form-group-title">
@@ -73,19 +84,25 @@ if (isset($_GET['deconnexion']) && $_GET['deconnexion'] === 'reussie') {
                     <?php if ($trajet["PLACES_DISPONIBLES"] > 0) :?>
                         <form method="post" action="/CONTROLLER/create_reservation.php?ID_TRAJET=<?= $trajet["ID_TRAJET"] ?>">
                             <div class="button-container">
-                                <button class="reserved">Réserver</button>
+                                <?php if (!empty($_SESSION)) : ?>
+                                    <button class="reserved">Réserver</button>
+                                <?php else : ?>
+                                    <p class="not-connected">Connectez-vous pour réserver</p>
+                                <?php endif; ?>
+                            </div>
                             </div>
                         </form>
                     <?php else : ?>
-                        <p class="complet"> Trajet complet ! </p>
+                        <p class="complet"> Trajet complet</p>
                     <?php endif;?>
             </div>
-        </div>
+        
         <?php endforeach; ?>
         <?php else : ?>
             <p class="notrajet">Aucun trajet n'est disponible pour le moment.</p>
         <?php endif; ?>
-    </div>
+        </div>
+
 
 </main>
 

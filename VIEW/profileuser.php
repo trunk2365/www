@@ -22,6 +22,7 @@ include '/laragon/www/CONTROLLER/header_controller.php'
 ?>
 
 <main>
+<div class="back-button"><a class="menu-button-style2" href="/VIEW/myaccount.php">Précédent</a></div>
     <div class="form-group-subscribe">
         <form method="post">
             <div class="group-1">
@@ -32,6 +33,7 @@ include '/laragon/www/CONTROLLER/header_controller.php'
                     <p class="text-sub">Adresse mail : <?=$_SESSION['EMAIL'] ?> </p>
                 </div>
             </div>
+            <input type="hidden" name="ID_USER" value="<?=$_SESSION['ID_USER'] ?>">
             <button class="sub-button">Supprimer votre compte</button>
         </form>
     </div>
